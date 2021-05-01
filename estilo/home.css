@@ -1,0 +1,21 @@
+@import url(base.css);
+.banner {
+    background-image: url("../imagens/banner.jpg");
+    height: 320px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: 60%;
+    margin-top: 80px;
+}
+
+.banner-shadow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    color: white;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+}
