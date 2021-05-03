@@ -2,6 +2,11 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Squada+One&display=swap');
+@import url('grid.css');
+html {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -17,6 +22,8 @@ h5,
 .menu {
     font-family: 'Squada One', cursive;
     margin: 0;
+    padding: 0;
+    top: 0;
 }
 
 
@@ -27,7 +34,7 @@ h5,
     display: flex;
     justify-content: space-between;
     padding: 8px 16px;
-    background-color: rgb(253, 251, 241);
+    background-color: rgb(216 216 216);
     box-shadow: 2px 0px 2px 4px rgba(0, 0, 0, 0.3);
     z-index: 999;
     position: fixed;
@@ -70,80 +77,14 @@ h5,
 }
 
 
-/* ------- GRID - 12 Colunas ------- */
+/* ------- DIVISOR ---------- */
 
-.container {
-    width: 100%;
+.divisor {
+    width: 80px;
+    height: 3px;
     display: block;
-    padding-left: 40px;
-    padding-right: 40px;
-}
-
-.row {
-    display: flex;
-    width: 100%;
-}
-
-.col,
-.col-1,
-.col-2,
-.col-3,
-.col-4,
-.col-5,
-.col-6,
-.col-7,
-.col-8,
-.col-9,
-.col-10,
-.col-11,
-.col-12 {
-    display: inline-block;
-}
-
-.col-1 {
-    width: calc(100%/12);
-}
-
-.col-2 {
-    width: calc(100%/12 * 2);
-}
-
-.col-3 {
-    width: calc(100%/12 * 3);
-}
-
-.col-4 {
-    width: calc(100%/12 * 4);
-}
-
-.col-5 {
-    width: calc(100%/12 * 5);
-}
-
-.col-6 {
-    width: calc(100%/12 * 6);
-}
-
-.col-7 {
-    width: calc(100%/12 * 7);
-}
-
-.col-8 {
-    width: calc(100%/12 * 8);
-}
-
-.col-9 {
-    width: calc(100%/12 * 9);
-}
-
-.col-10 {
-    width: calc(100%/12 * 10);
-}
-
-.col-11 {
-    width: calc(100%/12 * 11);
-}
-
-.col-12 {
-    width: 100%;
+    background-color: white;
+    margin: auto;
+    margin-top: 8px;
+    margin-bottom: 8px;
 }

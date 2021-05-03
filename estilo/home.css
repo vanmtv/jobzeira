@@ -7,15 +7,98 @@
     background-size: cover;
     background-position-y: 60%;
     margin-top: 80px;
+    width: 100%;
 }
 
 .banner-shadow {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 50px;
     color: white;
     width: 100%;
     height: 100%;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+}
+
+.title {
+    font-size: 80px;
+    text-align: center;
+}
+
+.subtitle {
+    font-size: 30px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
+.catalog {
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 33.333333%;
+    max-width: 1100px;
+    margin: auto;
+    margin-top: 16px;
+    justify-content: space-around;
+}
+
+.catalog-item {
+    margin-bottom: 16px;
+    flex-basis: calc(33.333333% - 32px);
+    margin: 16px;
+    box-shadow: 5px 5px 1px 2px rgba(0, 0, 0, 0.3);
+    background-color: rgb(216 216 216);
+    transition: 500ms;
+}
+
+.catalog-item:hover {
+    margin: 0 0 16px 0;
+    cursor: pointer;
+    transition: 500ms;
+}
+
+.catalog-item-body {
+    padding: 16px;
+}
+
+.catalog-item-body h3 {
+    font-size: 26px;
+    font-weight: 500;
+    padding-bottom: 8px;
+    display: inline-block;
+}
+
+.catalog-item-body .price {
+    float: right;
+    color: #0f710f;
+}
+
+.catalog-item-body p {
+    font-size: 16px;
+    padding: 0;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.catalog-item-img {
+    height: 160px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover
+}
+
+.img-1 {
+    background-image: url('../imagens/itens/enginer.jpg');
+}
+
+.img-2 {
+    background-image: url('../imagens/itens/lawyer.jpg');
+}
+
+.img-3 {
+    background-image: url('../imagens/itens/medic.jpg');
 }
