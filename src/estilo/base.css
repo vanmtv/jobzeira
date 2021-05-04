@@ -1,0 +1,90 @@
+/* ------- FONTS ------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Squada+One&display=swap');
+@import url('grid.css');
+html {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    color: #333333;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+.menu {
+    font-family: 'Squada One', cursive;
+    margin: 0;
+    padding: 0;
+    top: 0;
+}
+
+
+/* ------- MENU ------- */
+
+.menu {
+    width: calc(100% - 32px);
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 16px;
+    background-color: rgb(216 216 216);
+    box-shadow: 2px 0px 2px 4px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+    position: fixed;
+}
+
+.menu-logo {
+    width: 180px;
+}
+
+.menu-itens {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    list-style: none;
+    font-size: 22px;
+}
+
+.menu-itens li {
+    margin-right: 32px;
+    padding: 0;
+}
+
+.menu-itens a {
+    text-decoration: none;
+    color: #333333;
+}
+
+.menu-itens a:hover {
+    opacity: 0.8;
+}
+
+.menu-itens a.current {
+    text-decoration: underline;
+}
+
+.profile {
+    width: 30px;
+    vertical-align: -5px;
+}
+
+
+/* ------- DIVISOR ---------- */
+
+.divisor {
+    width: 80px;
+    height: 3px;
+    display: block;
+    background-color: white;
+    margin: auto;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
