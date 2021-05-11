@@ -31,8 +31,6 @@
         <input type="password" placeholder="Digite sua senha">
         <button class="light">Entrar</button>
     </div>
-
-</div>
 </body>
 
 </html>
