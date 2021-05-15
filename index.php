@@ -5,28 +5,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/estilo/base.css">
-    <link rel="stylesheet" href="/estilo/home.css">
+    <link rel="stylesheet" href="estilo/base.css">
+    <link rel="stylesheet" href="estilo/home.css">
     <title>Jobzeira</title>
 </head>
 
 <body>
+    <?php
+        include_once 'db_connect.php';
+        $sql = "SELECT `nome` FROM `usuarios` WHERE 1";
+        $resultado = mysqli_query($connect, $sql);
+        $nome = mysqli_fetch_array($resultado); //['Mateus Mazzei Anzolin']
+    ?>
     <header>
         <nav class="menu">
-            <a href="#"><img src="/imagens/logo.svg" alt="Logo" class="menu-logo"></a>
+            <a href="#"><img src="imagens/logo.svg" alt="Logo" class="menu-logo"></a>
             <ul class="menu-itens">
                 <li><a href="#" class="current">Catálogo</a></li>
                 <li><a href="#">Anunciar</a></li>
                 <li><a href="#">Serviços</a></li>
                 <li><a href="#">Entrar</a></li>
-                <li><img class="profile" src="/imagens/profile.svg" alt="perfil"></li>
+                <li><img class="profile" src="imagens/profile.svg" alt="perfil"></li>
             </ul>
         </nav>
     </header>
     <div class="banner">
         <div class="banner-shadow">
             <div>
-                <h1 class="title">Bem-vindo</h1>
+                <h1 class="title">Bem-vindo <?php echo $nome[0]?></h1>
                 <div class="divisor"></div>
                 <h3 class="subtitle">Qual serviço você precisa hoje ?</h3>
             </div>
