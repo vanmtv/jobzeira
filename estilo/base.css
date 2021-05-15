@@ -34,7 +34,7 @@ h5,
     display: flex;
     justify-content: space-between;
     padding: 8px 16px;
-    background-color: rgb(216 216 216);
+    background-color: rgb(255, 255, 255);
     box-shadow: 2px 0px 2px 4px rgba(0, 0, 0, 0.3);
     z-index: 999;
     position: fixed;
