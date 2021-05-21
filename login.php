@@ -25,12 +25,26 @@
             </ul>
         </nav>
     </header>
-    <div class="box-login flex-container">
-        <h1>Login</h1>
-        <input type="text" placeholder="Digite seu email">
-        <input type="password" placeholder="Digite sua senha">
-        <button class="light">Entrar</button>
+    <div class="box-login">
+        <div class="title">
+            <h1>Login</h1>
+        </div>
+        <form>
+            <p class="text-input">Nome ou Email</p>
+            <input type="text" placeholder="Digite seu nome de usuario" id="nome" onkeyup='validaNome()'>
+            <div id="txtName"></div>
+            <p class="text-input">Senha</p>
+            <input type="password" placeholder="Digite sua senha" id="senha" onkeyup='validaSenha()'>
+            <div id="txtSenha"></div>
+
+            <div class="btn-logar">
+            <button type="submit" onclick='logar()'>ENTRAR</button> 
+            </div>
+        </form>
+        </div>
     </div>
+
+    <script src="login.js"></script>
 </body>
 
 </html>
