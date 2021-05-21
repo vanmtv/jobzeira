@@ -15,7 +15,7 @@
 <body>
     <header>
         <nav class="menu">
-            <a href="#"><img src="/imagens/logo.svg" alt="Logo" class="menu-logo"></a>
+            <a href="index.php"><img src="/imagens/logo.svg" alt="Logo" class="menu-logo"></a>
             <ul class="menu-itens">
                 <li><a href="#" class="current">Catálogo</a></li>
                 <li><a href="#">Anunciar</a></li>
@@ -25,12 +25,22 @@
             </ul>
         </nav>
     </header>
-    <div class="box-login flex-container">
-        <h1>Login</h1>
-        <input type="text" placeholder="Digite seu email">
-        <input type="password" placeholder="Digite sua senha">
-        <button class="light">Entrar</button>
+    <div class="box-login">
+        <div class="title">
+            <h1>Login</h1>
+        </div>
+        <div>
+            <p class="text-input">Nome ou Email</p>
+            <input type="text" placeholder="Digite seu email">
+            <p class="text-input">Senha</p>
+            <input type="password" placeholder="Digite sua senha">
+            <div class="btn-logar">
+                <button>Entrar</button> 
+            </div>
+        </div>
     </div>
+
+    <script src="login.js"></script>
 </body>
 
 </html>

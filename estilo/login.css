@@ -1,21 +1,61 @@
+body{
+    background-color:white;
+    
+}
+
 .box-login{
-    background-color: #fdb630;
-    height: 100vh;
-    width: 100vw;
-    margin-top: 80px;
+    height: 50vh;
+    width: 40vw;
+    margin-top: 200px;
+    margin-left: 400px;
     position:center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: center;    
 }
 
-.box-login > input{
+
+.box-login > div > input{
+    border: none;
     border-radius: 0.5em;
-    margin: 2.5px;
+    margin-bottom: 10px;
     padding: 5px;
+    outline:none;
+    height: 20%;
+    width: 90%;
 }
 
-.box-login > button{
-    height: 30px;
+.btn-logar{
+    height: 40%;
+    width: 95%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-logar > button{
+    height: 50%;
+    /* width: 50%; */
+    border: none;
+    border-radius: 2px;
+    outline:none;
+    background-color: rgb(216 216 216);
+    color: gray;
+}
+
+.box-login > div > div> button:hover{
+    cursor: pointer;
+}
+
+
+
+.text-input {
+    margin: 5px;
+    text-align: start;
+}
+
+.title{
+    font-size: medium;
+    margin-bottom: 15px;
+    text-align: start;
 }
