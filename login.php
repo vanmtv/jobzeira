@@ -15,7 +15,7 @@
 <body>
     <header>
         <nav class="menu">
-            <a href="index.php"><img src="/imagens/logo.svg" alt="Logo" class="menu-logo"></a>
+            <a href="#"><img src="/imagens/logo.svg" alt="Logo" class="menu-logo"></a>
             <ul class="menu-itens">
                 <li><a href="#" class="current">Catálogo</a></li>
                 <li><a href="#">Anunciar</a></li>
@@ -29,14 +29,18 @@
         <div class="title">
             <h1>Login</h1>
         </div>
-        <div>
+        <form>
             <p class="text-input">Nome ou Email</p>
-            <input type="text" placeholder="Digite seu email">
+            <input type="text" placeholder="Digite seu nome de usuario" id="nome" onkeyup='validaNome()'>
+            <div id="txtName"></div>
             <p class="text-input">Senha</p>
-            <input type="password" placeholder="Digite sua senha">
+            <input type="password" placeholder="Digite sua senha" id="senha" onkeyup='validaSenha()'>
+            <div id="txtSenha"></div>
+
             <div class="btn-logar">
-                <button>Entrar</button> 
+            <button type="submit" onclick='logar()'>ENTRAR</button> 
             </div>
+        </form>
         </div>
     </div>
 
