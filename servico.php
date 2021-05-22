@@ -38,6 +38,7 @@
             <textarea name="descricaoBox" id="descricao" cols="30" rows="10" placeholder="Descrição do serviço"></textarea>
             <div class="buttonServico">
                 <button type="submit" id="cadastrarServico">CADASTRAR</button>
+                <button type="submit" id="editarServico">EDITAR</button>
             </div>
         </form>
     </div>
