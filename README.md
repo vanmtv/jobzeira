@@ -5,5 +5,4 @@ Descrição: Sistema web de localização e contratação de profissionais liber
 
 Professor responsável: Shigueo Tomomitsu
 
-Integrantes: Mateus Mazzei, Vagner Ramos, Vanessa Regina e Vitor Luis
-
+Integrantes: Mateus Mazzei, Vagner Ramos e Vanessa Regina

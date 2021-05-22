@@ -77,6 +77,46 @@ h5,
 }
 
 
+/* ------ FOOTER --------*/
+
+footer {
+    /*display: flex;
+    justify-content: space-between;
+    align-items: center;*/
+    background: #333;
+    padding: 16px 32px;
+    color: white;
+}
+
+footer h4 {
+    font-size: 24px;
+    text-align: center;
+}
+
+.icons {
+    background-color: white;
+    border-radius: 22px;
+    display: block;
+    height: 32px;
+    width: 32px;
+    display: inline-block;
+    margin-left: 16px;
+    position: relative;
+    cursor: pointer;
+}
+
+.icons i {
+    color: #333;
+    position: absolute;
+    top: 8px;
+    left: 9.5px;
+}
+
+.footer-logo {
+    width: 120px;
+}
+
+
 /* ------- DIVISOR ---------- */
 
 .divisor {

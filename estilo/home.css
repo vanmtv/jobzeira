@@ -49,6 +49,13 @@
     margin: 16px;
     box-shadow: 5px 5px 1px 2px rgba(0, 0, 0, 0.3);
     background-color: rgb(216 216 216);
+    transition: 0.5s;
+}
+
+.catalog-item:hover {
+    background-color: #333;
+    color: white;
+    cursor: pointer;
 }
 
 .catalog-item-body {
@@ -82,16 +89,4 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover
-}
-
-.img-1 {
-    background-image: url('../imagens/itens/enginer.jpg');
-}
-
-.img-2 {
-    background-image: url('../imagens/itens/lawyer.jpg');
-}
-
-.img-3 {
-    background-image: url('../imagens/itens/medic.jpg');
 }
