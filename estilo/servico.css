@@ -1,0 +1,79 @@
+.telaServico{
+    margin-top: 100px;
+    margin-left: 80px;
+    margin-bottom: 50px;
+}
+
+.formServico{
+    margin-top: 20px;
+    background-color: #FCA701;
+    border-radius: 10px;
+    padding: 40px;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+}
+
+.formServico > input{
+    border: none;
+    border-radius: 0.5em;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding: 5px;
+    outline:none;
+    height: 20%;
+    width: 90%;
+}
+
+#descricao{
+    border: none;
+    border-radius: 0.5em;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding: 5px;
+    outline:none;
+    height: 50%;
+    width: 90%;
+}
+
+
+#cadastrarServico{
+    height: 30px;
+    width: 100px;
+    border: none;
+    border-radius: 2px;
+    outline:none;
+    background-color: #2352A8;
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+
+#editarServico{
+    height: 30px;
+    width: 10%;
+    border: none;
+    border-radius: 2px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    outline:none;
+    background-color: #2352A8;
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+
+#editarServico:hover{
+    cursor: pointer;
+    background-color: rgb(56, 105, 196)
+}
+
+#cadastrarServico:hover{
+    cursor: pointer;
+    background-color: rgb(56, 105, 196);
+}
+
+.buttonServico{
+    margin-right: 80px;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
