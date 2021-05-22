@@ -7,15 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilo/base.css">
     <link rel="stylesheet" href="estilo/home.css">
+    <link rel="stylesheet" href="estilo/font-awesome/css/font-awesome.min.css">
     <title>Jobzeira</title>
 </head>
 
 <body>
     <?php
-        include_once 'db_connect.php';
-        $sql = "SELECT `nome` FROM `usuarios` WHERE 1";
-        $resultado = mysqli_query($connect, $sql);
-        $nome = mysqli_fetch_array($resultado); //['Mateus Mazzei Anzolin']
+    include_once 'db_connect.php';
     ?>
     <header>
         <nav class="menu">
@@ -32,38 +30,37 @@
     <div class="banner">
         <div class="banner-shadow">
             <div>
-                <h1 class="title">Bem-vindo <?php echo $nome[0]?></h1>
+                <h1 class="title">Bem-vindo</h1>
                 <div class="divisor"></div>
                 <h3 class="subtitle">Qual serviço você precisa hoje ?</h3>
             </div>
         </div>
     </div>
     <div class="catalog">
-        <div class="catalog-item">
-            <div class="catalog-item-img img-1"></div>
-            <div class="catalog-item-body">
-                <h3>Enginer</h3>
-                <h3 class="price">R$ 2000</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis ullamcorper nibh. Aliquam gravida justo id suscipit elementum. Curabitur elementum neque vel nisl efficitur, eget fermentum tellus fermentum.</p>
-            </div>
-        </div>
-        <div class="catalog-item">
-            <div class="catalog-item-img img-2"></div>
-            <div class="catalog-item-body">
-                <h3>Lawyer</h3>
-                <h3 class="price">R$ 2000</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis ullamcorper nibh. Aliquam gravida justo id suscipit elementum. Curabitur elementum neque vel nisl efficitur, eget fermentum tellus fermentum.</p>
-            </div>
-        </div>
-        <div class="catalog-item">
-            <div class="catalog-item-img img-3"></div>
-            <div class="catalog-item-body">
-                <h3>Medic</h3>
-                <h3 class="price">R$ 1000</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis ullamcorper nibh. Aliquam gravida justo id suscipit elementum. Curabitur elementum neque vel nisl efficitur, eget fermentum tellus fermentum.</p>
-            </div>
-        </div>
+        <?php
+        $sql = "SELECT `titulo`,`valor`,`foto_path`,`descricao` FROM `anuncios` WHERE 1";
+        $resultado = mysqli_query($connect, $sql);
+        while ($row = mysqli_fetch_array($resultado)) {
+            echo '<div class="catalog-item">' .
+                '<div class="catalog-item-img" style="background-image: url(' . $row[2] . ');"></div>' .
+                '<div class="catalog-item-body">' .
+                '<h3>' . $row[0] . '</h3>' .
+                '<h3 class="price">R$' . intval($row[1]) . '</h3>' .
+                '<p>' . $row[3] . '</p>' .
+                '</div>' .
+                '</div>';
+        }
+        ?>
     </div>
+    <footer>
+        <!--div><img src="imagens/logo.svg" alt="Logo" class="footer-logo"></div-->
+        <h4>Desenvolvido por XDevs LTDA.</h4>
+        <!--div class="social-midia">
+            <div class="icons"><i class="fa fa-facebook"></i></div>
+            <div class="icons"><i class="fa fa-instagram"></i></div>
+            <div class="icons"><i class="fa fa-twitter"></i></div>
+        </div-->
+    </footer>
 </body>
 
 </html>
