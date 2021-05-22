@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/estilo/home.css">
     <link rel="stylesheet" href="/estilo/login.css">
     <link rel="stylesheet" href="/estilo/grid.css">
-    <title>Jobzeira Login</title>
+    <title>Jobzeira - Login</title>
 </head>
 
 <body>
@@ -43,7 +43,15 @@
         </form>
         </div>
     </div>
-
+    <footer>
+        <!--div><img src="imagens/logo.svg" alt="Logo" class="footer-logo"></div-->
+        <h4>Desenvolvido por XDevs LTDA.</h4>
+        <!--div class="social-midia">
+            <div class="icons"><i class="fa fa-facebook"></i></div>
+            <div class="icons"><i class="fa fa-instagram"></i></div>
+            <div class="icons"><i class="fa fa-twitter"></i></div>
+        </div-->
+    </footer>
     <script src="login.js"></script>
 </body>
 
