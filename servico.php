@@ -27,8 +27,11 @@
             </ul>
         </nav>
     </header>
-    <div class="telaServico">
+    <div class="screenServico">
         <h1>Serviço</h1>
+    </div>
+    <div class="telaServico">
+        
         <form class="formServico">
             <label for="nomeServico">Nome do serviço</label>
             <input type="text" placeholder="Nome do serviço">
@@ -42,6 +45,7 @@
             </div>
         </form>
     </div>
+
 
 
     <footer>
