@@ -17,12 +17,12 @@
     ?>
     <header>
         <nav class="menu">
-            <a href="#"><img src="imagens/logo.svg" alt="Logo" class="menu-logo"></a>
+            <a href="index.php"><img src="imagens/logo.svg" alt="Logo" class="menu-logo"></a>
             <ul class="menu-itens">
                 <li><a href="#" class="current">Catálogo</a></li>
                 <li><a href="#">Anunciar</a></li>
-                <li><a href="#">Serviços</a></li>
-                <li><a href="#">Entrar</a></li>
+                <li><a href="servico.php">Serviços</a></li>
+                <li><a href="login.php">Entrar</a></li>
                 <li><img class="profile" src="imagens/profile.svg" alt="perfil"></li>
             </ul>
         </nav>
@@ -57,6 +57,7 @@
             <div class="icons"><i class="fa fa-twitter"></i></div>
         </div-->
     </footer>
+    <script src="./scripts/servico.js"></script>
 </body>
 
 </html>
