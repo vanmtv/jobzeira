@@ -46,8 +46,6 @@
         </form>
     </div>
 
-
-
     <footer>
         <!--div><img src="imagens/logo.svg" alt="Logo" class="footer-logo"></div-->
         <h4>Desenvolvido por XDevs LTDA.</h4>
