@@ -33,20 +33,21 @@
     <div class="telaServico">
         
         <form class="formServico">
-            <label for="nomeServico">Nome do serviço</label>
-            <input type="text" placeholder="Nome do serviço">
-            <label for="numTelText">Número de contato</label>
-            <input type="number" placeholder="Numero de contato" name="telNumber" id="telNumber">
+            <label for="nomeServico" >Nome do serviço</label>
+            <input type="text" placeholder="Nome do serviço" id="nomeServico" onkeyup='validaNomeServico()'>
+            <div id="txtNomeServico"></div>
+            <label for="numTelText" id="numTel">Número de contato</label>
+            <input type="number" placeholder="Numero de contato" name="telNumber" id="telNumber" onkeyup='validaNumTel()'>
+            <div id="txtNumTel"></div>
             <label for="">Descrição do Serviço</label>
             <textarea name="descricaoBox" id="descricao" cols="30" rows="10" placeholder="Descrição do serviço"></textarea>
+            <div id="txtDescricao"></div>
             <div class="buttonServico">
-                <button type="submit" id="cadastrarServico">CADASTRAR</button>
-                <button type="submit" id="editarServico">EDITAR</button>
+                <button type="submit" id="cadastrarServico" onclick='cadastrar()'>CADASTRAR</button>
+                <button type="submit" id="editarServico"  onclick='editar()'>EDITAR</button>
             </div>
         </form>
     </div>
-
-
 
     <footer>
         <!--div><img src="imagens/logo.svg" alt="Logo" class="footer-logo"></div-->
