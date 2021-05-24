@@ -5,23 +5,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/estilo/base.css">
-    <link rel="stylesheet" href="/estilo/home.css">
-    <link rel="stylesheet" href="/estilo/login.css">
-    <link rel="stylesheet" href="/estilo/grid.css">
-    <title>Jobzeira - Login</title>
+    <link rel="stylesheet" href="estilo/base.css">
+    <link rel="stylesheet" href="estilo/home.css">
+    <link rel="stylesheet" href="estilo/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="estilo/login.css">
+    <title>Jobzeira</title>
 </head>
 
 <body>
+    <?php
+    include_once 'db_connect.php';
+    ?>
     <header>
         <nav class="menu">
-            <a href="#"><img src="/imagens/logo.svg" alt="Logo" class="menu-logo"></a>
+            <a href="index.php"><img src="imagens/logo.svg" alt="Logo" class="menu-logo"></a>
             <ul class="menu-itens">
                 <li><a href="#" class="current">Catálogo</a></li>
                 <li><a href="#">Anunciar</a></li>
-                <li><a href="#">Serviços</a></li>
-                <li><a href="#">Entrar</a></li>
-                <li><img class="profile" src="/imagens/profile.svg" alt="perfil"></li>
+                <li><a href="servico.php">Serviços</a></li>
+                <li><a href="login.php">Entrar</a></li>
+                <li><img class="profile" src="imagens/profile.svg" alt="perfil"></li>
             </ul>
         </nav>
     </header>
@@ -52,7 +55,7 @@
             <div class="icons"><i class="fa fa-twitter"></i></div>
         </div-->
     </footer>
-    <script src="login.js"></script>
+    <script src="./scripts/login.js"></script>
 </body>
 
 </html>
