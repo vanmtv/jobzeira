@@ -1,19 +1,19 @@
-let nomeOk  = false
-let nome = window.document.getElementById('nome')
+let emailOk  = false
+let txtEmail = window.document.getElementById('email')
 let senha = window.document.getElementById('senha')
 let senhaOk = false
 
-function validaNome(){
-    let txtName = document.getElementById('txtName')
-    if(nome.value.length < 3){
-        txtName.innerHTML = 'Digite mais que 3 caracteres.'
-        txtName.style.color = 'red'
+function validaEmail(){
+    let txtEmail = document.getElementById('txtEmail')
+    if(email.value.indexOf('@') == -1 || email.value.indexOf('.') == -1 ){
+        txtEmail.innerHTML = 'Digite email válido'
+        txtEmail.style.color = 'red'
         
     }
     else{
-        txtName.innerHTML ='Nome válido'
-        txtName.style.color = '#2352A8'
-        nomeOk = true
+        txtEmail.innerHTML ='Email válido'
+        txtEmail.style.color = '#2352A8'
+        emailOk = true
     }
 }
 
@@ -31,9 +31,8 @@ function validaSenha(){
 }
 
 
-
 function logar(){
-    if(nomeOk == true && senhaOk == true){
+    if(emailOk == true && senhaOk == true){
         alert('Login efetuado com sucesso')
     }
     else{
