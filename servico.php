@@ -40,7 +40,7 @@
             <input type="number" placeholder="Numero de contato" name="telNumber" id="telNumber" onkeyup='validaNumTel()'>
             <div id="txtNumTel"></div>
             <label for="">Descrição do Serviço</label>
-            <textarea name="descricaoBox" id="descricao" cols="30" rows="10" placeholder="Descrição do serviço"></textarea>
+            <textarea name="descricaoBox" id="descricao" cols="30" rows="10" placeholder="Descrição do serviço"></textarea onkeyup='validaDescricao()'>
             <div id="txtDescricao"></div>
             <div class="buttonServico">
                 <button type="submit" id="cadastrarServico" onclick='cadastrar()'>CADASTRAR</button>

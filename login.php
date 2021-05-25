@@ -33,9 +33,9 @@
             <h1>Login</h1>
         </div>
         <form>
-            <p class="text-input">Nome ou Email</p>
-            <input type="text" placeholder="Digite seu nome de usuario" id="nome" onkeyup='validaNome()'>
-            <div id="txtName"></div>
+            <p class="text-input">Email</p>
+            <input type="email" placeholder="Digite seu email" id="email" onkeyup='validaEmail()'>
+            <div id="txtEmail"></div>
             <p class="text-input">Senha</p>
             <input type="password" placeholder="Digite sua senha" id="senha" onkeyup='validaSenha()'>
             <div id="txtSenha"></div>
