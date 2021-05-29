@@ -20,7 +20,7 @@
             <a href="index.php"><img src="imagens/logo.svg" alt="Logo" class="menu-logo"></a>
             <ul class="menu-itens">
                 <li><a href="#" class="current">Catálogo</a></li>
-                <li><a href="#">Anunciar</a></li>
+                <li><a href="anuncio.php">Anunciar</a></li>
                 <li><a href="servico.php">Serviços</a></li>
                 <li><a href="login.php">Entrar</a></li>
                 <li><img class="profile" src="imagens/profile.svg" alt="perfil"></li>
