@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="estilo/home.css">
     <link rel="stylesheet" href="estilo/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="estilo/login.css">
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
     <title>Jobzeira</title>
 </head>
 
