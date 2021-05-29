@@ -32,10 +32,36 @@ function validaSenha(){
 
 
 function logar(){
-    if(emailOk == true && senhaOk == true){
-        alert('Login efetuado com sucesso')
-    }
-    else{
-        alert('Não foi possível efetuar login')
-    }
+    $.ajax({
+        url: 'http://localhost/jobzeira/scripts/submitLogin.php',
+        type: 'POST',
+
+        data: function() {
+            var data = new FormData();
+            data.append('email', $("#email").val());
+            data.append('senha', $("#senha").val());
+            return data;
+        }(),
+        success: function(data) {
+            var obj = JSON.parse(data);
+            if(obj.result){
+                localStorage.setItem('jobzeira_logado','logado');
+                localStorage.setItem('jobzeira_funcao', obj.result.funcao);
+            }
+            else{
+                localStorage.removeItem('jobzeira_logado');
+                localStorage.removeItem('jobzeira_funcao');
+            }
+        },
+        error: function(data) {
+            alert(data);
+        },
+        complete: function(data) {
+
+        },
+        cache: false,
+        contentType: false,
+        processData: false
+    });
 }
+

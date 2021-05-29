@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="estilo/base.css">
     <link rel="stylesheet" href="estilo/home.css">
     <link rel="stylesheet" href="estilo/font-awesome/css/font-awesome.min.css">
+    <script src="scripts/home.js"></script>
     <title>Jobzeira</title>
 </head>
 
