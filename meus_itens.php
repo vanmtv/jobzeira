@@ -6,10 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilo/base.css">
+    <link rel="stylesheet" href="estilo/anuncio.css">
     <link rel="stylesheet" href="estilo/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="estilo/login.css">
-    <script src="scripts/menu.js"></script>
     <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="scripts/meus_itens.js"></script>
+    <script src="scripts/menu.js"></script>
     <title>Jobzeira</title>
 </head>
 
@@ -24,23 +25,8 @@
             </ul>
         </nav>
     </header>
-    <div class="box-login">
-        <div class="title">
-            <h1>Login</h1>
-        </div>
-        <form>
-            <p class="text-input">Email</p>
-            <input type="email" placeholder="Digite seu email" id="email" onkeyup='validaEmail()'>
-            <div id="txtEmail"></div>
-            <p class="text-input">Senha</p>
-            <input type="password" placeholder="Digite sua senha" id="senha" onkeyup='validaSenha()'>
-            <div id="txtSenha"></div>
-
-            <div class="btn-logar">
-            <button type="submit" onclick='logar()'>ENTRAR</button> 
-            </div>
-        </form>
-        </div>
+    <div class="content">
+        <h1 class="titulo">Meus anúncios</h1>
     </div>
     <footer>
         <!--div><img src="imagens/logo.svg" alt="Logo" class="footer-logo"></div-->
@@ -51,7 +37,6 @@
             <div class="icons"><i class="fa fa-twitter"></i></div>
         </div-->
     </footer>
-    <script src="./scripts/login.js"></script>
 </body>
 
 </html>

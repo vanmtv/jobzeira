@@ -1,3 +1,12 @@
+setTimeout(() => {
+    let role = localStorage.getItem('jobzeira_funcao');
+
+    if (role == 'cliente' || !role) {
+        let domain = window.location.hostname;
+        window.location.href = 'http://' + domain + '/jobzeira/login.php';
+    }
+}, 200);
+
 var filledForm = false;
 
 function isFilled() {
@@ -27,10 +36,10 @@ function sendToPHP() {
 
         data: function() {
             var data = new FormData();
+            data.append('titulo', $("#titulo").val());
             data.append('servico', $("#servico").val());
-            data.append('profissional', $("#profissional").val());
+            data.append('profissional', localStorage.getItem('jobzeira_id'));
             data.append('valor', $("#valor").val());
-            data.append('teste', 'foi');
             data.append('descricao', $("#descricao").val());
             return data;
         }(),
