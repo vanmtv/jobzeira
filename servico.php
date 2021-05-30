@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilo/base.css">
-    <link rel="stylesheet" href="estilo/home.css">
     <link rel="stylesheet" href="estilo/font-awesome/css/font-awesome.min.css">
+    <script src="scripts/menu.js"></script>
     <link rel="stylesheet" href="estilo/servico.css">
     <title>Jobzeira - Serviço</title>
 </head>
@@ -18,12 +18,7 @@
     <header>
         <nav class="menu">
             <a href="index.php"><img src="imagens/logo.svg" alt="Logo" class="menu-logo"></a>
-            <ul class="menu-itens">
-                <li><a href="index.php">Catálogo</a></li>
-                <li><a href="anuncio.php">Anunciar</a></li>
-                <li><a href="servico.php" class="current">Serviços</a></li>
-                <li><a href="login.php">Entrar</a></li>
-                <li><img class="profile" src="imagens/profile.svg" alt="perfil"></li>
+            <ul class="menu-itens" id="menu-itens">
             </ul>
         </nav>
     </header>

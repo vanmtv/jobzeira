@@ -2,8 +2,8 @@
 
 include_once '../db_connect.php';
 
-$sql = "INSERT INTO `anuncios`(`servico_id`, `profissional_id`, `valor`, `descricao`, `foto_path`) VALUES (" 
-    . $_POST['servico'] . ",9," . $_POST['valor'] . ",'" . $_POST['descricao'] . "','fotopath')";
+$sql = "INSERT INTO `anuncios`(`servico_id`,`titulo`, `profissional_id`, `valor`, `descricao`, `foto_path`) VALUES (" 
+    . $_POST['servico'] . ",'" . $_POST['titulo']. "',". $_POST['profissional'] ."," . $_POST['valor'] . ",'" . $_POST['descricao'] . "','fotopath')";
     
 $insert = mysqli_query($connect,$sql);
 
