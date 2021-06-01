@@ -21,13 +21,13 @@
     $user_id = $_GET['id'];
     $title = 'Anunciar';
     $class = 'mandatory';
-    $button_label = 'Salvar';
 
     if($item_id == -1 || !$item_id){
         $sql_user = "SELECT `nome` FROM `usuarios` WHERE `usuario_id` = " . $user_id;
         $sql_servico = "SELECT `servico_id`,`titulo` FROM `servicos` WHERE 1";
         $query_servico = mysqli_query($connect,$sql_servico);
         $button_label = 'Cadastrar';
+        $type = 'New';
     }
     else{
         $sql_item = "SELECT * FROM `anuncios` WHERE `anuncio_id` = " . $item_id;
@@ -37,6 +37,8 @@
         $title = $item[1];
         $class .= ' filled';
         $sql_user = "SELECT `nome` FROM `usuarios` WHERE `usuario_id` = " . $item[3];
+        $type = 'Edit';
+        $button_label = 'Salvar';
     };
 
     $query_user = mysqli_query($connect,$sql_user);
@@ -112,7 +114,7 @@
                 </div>
                 <div class="d-flex flex-end">
                     <a class="btnForm btnSecondary" href="index.php">Voltar</a>
-                    <button class="btnForm btnPrimary" onclick="sendToPHP()"><?php echo $button_label ?></button>
+                    <button class="btnForm btnPrimary" onclick="sendToPHP('<?php echo $type . '\' ,' . $item_id ?>)"><?php echo $button_label ?></button>
                 </div>
             </form>
         </div>

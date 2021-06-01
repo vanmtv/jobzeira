@@ -29,9 +29,8 @@ function isFilled() {
     filledForm = !foundEmptyField;
 }
 
-function sendToPHP() {
-    console.log($("#file").prop('files')[0]);
-    alert('wait');
+function sendToPHP(type, id) {
+
     $.ajax({
         url: 'http://localhost/jobzeira/scripts/submitAnuncio.php',
         type: 'POST',
@@ -44,6 +43,8 @@ function sendToPHP() {
             data.append('valor', $("#valor").val());
             data.append('descricao', $("#descricao").val());
             data.append('file', $("#file").prop('files')[0]);
+            data.append('type', type);
+            data.append('id', id);
             return data;
         }(),
         success: function(data) {
