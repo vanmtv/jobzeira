@@ -11,7 +11,7 @@ function validaEmail() {
 
     } else {
         txtEmail.innerHTML = 'Email válido'
-        txtEmail.style.color = '#2352A8'
+        txtEmail.style.color = '#0f710f'
         emailOk = true
     }
 }
@@ -23,13 +23,18 @@ function validaSenha() {
         txtSenha.style.color = 'red'
     } else {
         txtSenha.innerHTML = 'Números de caracteres válidos'
-        txtSenha.style.color = '#2352A8'
+        txtSenha.style.color = '#0f710f'
         senhaOk = true
     }
 }
 
 
 function logar() {
+    if (!emailOk || !senhaOk) {
+        alert('Senha ou email incorretos');
+        return;
+    }
+
     $.ajax({
         url: 'http://localhost/jobzeira/scripts/submitLogin.php',
         type: 'POST',
@@ -46,10 +51,12 @@ function logar() {
                 localStorage.setItem('jobzeira_logado', 'logado');
                 localStorage.setItem('jobzeira_funcao', obj.result.funcao);
                 localStorage.setItem('jobzeira_id', obj.result.usuario_id);
+                window.location.href = window.location.origin + '/jobzeira/index.php';
             } else {
                 localStorage.removeItem('jobzeira_logado');
                 localStorage.removeItem('jobzeira_funcao');
                 localStorage.removeItem('jobzeira_id');
+                alert('Senha ou email incorretos');
             }
         },
         error: function(data) {
