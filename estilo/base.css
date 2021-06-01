@@ -51,8 +51,8 @@ select {
     display: flex;
     justify-content: space-between;
     padding: 8px 16px;
-    background-color: rgb(255, 255, 255);
-    box-shadow: 2px 0px 2px 4px rgba(0, 0, 0, 0.3);
+    background-color: #fdcd6f;
+    box-shadow: 0px 3px 1px 2px rgba(0, 0, 0, 0.3);
     z-index: 999;
     position: fixed;
 }
@@ -170,8 +170,9 @@ footer h4 {
 .formulario {
     padding: 32px 64px;
     margin: auto;
-    background-color: #fdcd6f;
+    background-color: #ececec;
     margin-bottom: 32px;
+    box-shadow: 5px 5px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .formulario form {
@@ -249,4 +250,74 @@ select.filled {
 
 span.filled {
     display: none;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.flex-end {
+    justify-content: flex-end;
+}
+
+.btnForm {
+    border: none;
+    padding: 8px 16px;
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    display: block;
+    margin-left: 16px;
+    transition: 0.5s;
+    cursor: pointer;
+    font-family: 'Squada One', cursive;
+}
+
+.btnForm:hover {
+    opacity: 0.8;
+}
+
+.btnSecondary {
+    color: #333;
+    background-color: #ececec;
+}
+
+.btnPrimary {
+    color: white;
+    background-color: #0f710f;
+}
+
+.paperclip {
+    position: relative;
+}
+
+.paperclip input {
+    opacity: 0;
+    z-index: 10;
+    padding: 8px;
+    height: 16px;
+    width: 112px;
+    cursor: pointer;
+}
+
+.paperclip span {
+    position: absolute;
+    font-size: 22px;
+    color: #333;
+    z-index: 0;
+    margin-top: 0px;
+    cursor: pointer;
+}
+
+.paperclip span.label {
+    left: 28px;
+    font-size: 19px;
+    cursor: pointer;
+}
+
+.price {
+    color: #0f710f;
+    margin-top: 8px;
+    font-size: 42px;
+    text-align: center;
 }

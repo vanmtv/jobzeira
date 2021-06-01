@@ -24,23 +24,26 @@
             </ul>
         </nav>
     </header>
-    <div class="box-login">
+    <div class="box-login formulario">
         <div class="title">
             <h1>Login</h1>
         </div>
         <form>
-            <p class="text-input">Email</p>
-            <input type="email" placeholder="Digite seu email" id="email" onkeyup='validaEmail()'>
-            <div id="txtEmail"></div>
-            <p class="text-input">Senha</p>
-            <input type="password" placeholder="Digite sua senha" id="senha" onkeyup='validaSenha()'>
-            <div id="txtSenha"></div>
-
+            <div class="raised">
+                <label class="text-input">Email
+                    <input type="email" placeholder="Digite seu email" id="email" onkeyup='validaEmail()'>
+                    <div id="txtEmail"></div>
+                </label>
+                <label class="text-input">Senha
+                    <input type="password" placeholder="Digite sua senha" id="senha" onkeyup='validaSenha()'>
+                    <div id="txtSenha"></div>
+                </label>
+            </div>
             <div class="btn-logar">
-            <button type="submit" onclick='logar()'>ENTRAR</button> 
+                <button type="submit" class="btnForm btnPrimary" onclick='logar()'>Entrar</button>
             </div>
         </form>
-        </div>
+    </div>
     </div>
     <footer>
         <!--div><img src="imagens/logo.svg" alt="Logo" class="footer-logo"></div-->

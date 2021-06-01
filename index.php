@@ -35,16 +35,16 @@
     </div>
     <div class="catalog">
         <?php
-        $sql = "SELECT `titulo`,`valor`,`foto_path`,`descricao` FROM `anuncios` WHERE 1";
+        $sql = "SELECT `anuncio_id`,`titulo`,`valor`,`foto_path`,`descricao` FROM `anuncios` WHERE 1";
         $resultado = mysqli_query($connect, $sql);
         while ($row = mysqli_fetch_array($resultado)) {
             echo '<div class="catalog-item">' .
-                '<a href="anuncio.php?id=7&item=1">' .
-                '<div class="catalog-item-img" style="background-image: url(' . $row[2] . ');"></div>' .
+                '<a href="ver_anuncio.php?item='.$row[0].'">' .
+                '<div class="catalog-item-img" style="background-image: url(' . $row[3] . ');"></div>' .
                 '<div class="catalog-item-body">' .
-                '<h3>' . $row[0] . '</h3>' .
-                '<h3 class="price">R$' . intval($row[1]) . '</h3>' .
-                '<p>' . $row[3] . '</p>' .
+                '<h3>' . $row[1] . '</h3>' .
+                '<h3 class="price">R$' . intval($row[2]) . '</h3>' .
+                '<p>' . $row[4] . '</p>' .
                 '</div>' .
                 '</div>';
         }
