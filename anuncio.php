@@ -9,6 +9,13 @@
     <link rel="stylesheet" href="estilo/anuncio.css">
     <link rel="stylesheet" href="estilo/font-awesome/css/font-awesome.min.css">
     <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+   
+    <!-- pdfmake files: -->
+    <script src='https://cdn.jsdelivr.net/npm/pdfmake@latest/build/pdfmake.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/pdfmake@latest/build/vfs_fonts.min.js'></script>
+    <!-- html-to-pdfmake file: -->
+    <script src="https://cdn.jsdelivr.net/npm/html-to-pdfmake/browser.js"></script>
+    
     <script src="scripts/anuncio.js"></script>
     <script src="scripts/menu.js"></script>
     <title>Jobzeira</title>
@@ -18,22 +25,21 @@
     <?php
     include_once 'db_connect.php';
     $item_id = $_GET['item'];
-    if(!$item_id) $item_id = -1;
-    
+    if (!$item_id) $item_id = -1;
+
     $user_id = $_GET['id'];
     $title = 'Anunciar';
     $class = 'mandatory';
 
-    if($item_id == -1 || !$item_id){
+    if ($item_id == -1 || !$item_id) {
         $sql_user = "SELECT `nome` FROM `usuarios` WHERE `usuario_id` = " . $user_id;
         $sql_servico = "SELECT `servico_id`,`titulo` FROM `servicos` WHERE 1";
-        $query_servico = mysqli_query($connect,$sql_servico);
+        $query_servico = mysqli_query($connect, $sql_servico);
         $button_label = 'Cadastrar';
         $type = 'New';
-    }
-    else{
+    } else {
         $sql_item = "SELECT * FROM `anuncios` WHERE `anuncio_id` = " . $item_id;
-        $query_item = mysqli_query($connect,$sql_item);
+        $query_item = mysqli_query($connect, $sql_item);
         $item = mysqli_fetch_array($query_item);
 
         $title = $item[1];
@@ -41,9 +47,10 @@
         $sql_user = "SELECT `nome` FROM `usuarios` WHERE `usuario_id` = " . $item[3];
         $type = 'Edit';
         $button_label = 'Salvar';
+        $showDeleteButton = true;
     };
 
-    $query_user = mysqli_query($connect,$sql_user);
+    $query_user = mysqli_query($connect, $sql_user);
     $user = mysqli_fetch_array($query_user);
 
     ?>
@@ -55,29 +62,33 @@
         </nav>
     </header>
     <div class="content">
-        <h1 class="titulo"><?php echo $title?></h1>
+        <h1 class="titulo"><?php echo $title ?></h1>
+        <div class="delete">
+            <?php if ($showDeleteButton)
+                echo '<button class="btnForm btnDelete" onclick="sendToPHP(\'Delete\',' . $item_id . ')">Excluir</button>';
+            ?>
+        </div>
         <div class="formulario">
             <form>
                 <div class="raised">
                     <label>
-                        <span class="<?php echo $class?>">*</span>
+                        <span class="<?php echo $class ?>">*</span>
                         Título
-                        <input type="text" class="<?php echo $class?>" name="titulo" id="titulo" 
-                        onchange="isFilled()" <?php if($item) echo "value='" . $title . "'"?>>
+                        <input type="text" class="<?php echo $class ?>" name="titulo" id="titulo" onchange="isFilled()" <?php if ($item) echo "value='" . $title . "'" ?>>
                     </label>
                 </div>
                 <div class="half">
                     <label>
-                        <span class="<?php echo $class?>">*</span>
+                        <span class="<?php echo $class ?>">*</span>
                         Serviço Anunciado
-                        <select class="<?php echo $class?>" name="servico" id="servico" onchange="isFilled()">
-                            <?php 
-                                if($item) echo "<option value='" . $item[2] . "'  >" . $item[2] . "</option>";
-                                else{
-                                    while($servico = mysqli_fetch_array($query_servico)){
-                                        echo "<option value='" . $servico[0] . "'  >" . $servico[1] . "</option>";
-                                    }
+                        <select class="<?php echo $class ?>" name="servico" id="servico" onchange="isFilled()">
+                            <?php
+                            if ($item) echo "<option value='" . $item[2] . "'  >" . $item[2] . "</option>";
+                            else {
+                                while ($servico = mysqli_fetch_array($query_servico)) {
+                                    echo "<option value='" . $servico[0] . "'  >" . $servico[1] . "</option>";
                                 }
+                            }
                             ?>
                         </select>
                     </label>
@@ -88,47 +99,44 @@
                 </div>
                 <div class="half">
                     <label>
-                        <span class="<?php echo $class?>">*</span>
+                        <span class="<?php echo $class ?>">*</span>
                         Valor
-                        <input type="text" class="<?php echo $class?>" name="valor" id="valor" 
-                                onchange="isFilled()" <?php if($item) echo "value='" . $item[4] . "'"?> >
+                        <input type="number" class="<?php echo $class ?>" name="valor" id="valor" onchange="isFilled()" <?php if ($item) echo "value='" . $item[4] . "'" ?>>
                     </label>
                     <label>
                         Número
-                        <input type="text" readonly name="numero" id="numero" 
-                                onchange="isFilled()" <?php if($item) echo "value='" . $item[0] . "'"?>>
+                        <input type="text" readonly name="numero" id="numero" onchange="isFilled()" <?php if ($item) echo "value='" . $item[0] . "'" ?>>
                     </label>
                 </div>
                 <div class="raised">
                     <label>
-                        <span class="<?php echo $class?>">*</span>
+                        <span class="<?php echo $class ?>">*</span>
                         Descrição do serviço anunciado
-                        <textarea rows="6" class="<?php echo $class?>" name="descricao" id="descricao" 
-                         onchange="isFilled()"><?php if($item) echo $item[5]?></textarea>
+                        <textarea rows="6" class="<?php echo $class ?>" name="descricao" id="descricao" onchange="isFilled()"><?php if ($item) echo $item[5] ?></textarea>
                     </label>
                 </div>
                 <div class="raised">
                     <div class="paperclip">
                         <span class="fa fa-paperclip" aria-hidden="true"></span>
                         <span class="label">Anexar foto</span>
-                        <input type='file' name='file' id="file"/>
+                        <input type='file' name='file' id="file" />
                     </div>
                 </div>
-                <div class="d-flex flex-end">
-                    <a class="btnForm btnSecondary" href="index.php">Voltar</a>
-                    <button class="btnForm btnPrimary" onclick="sendToPHP(<?php echo '\'' . $type . '\',' . $item_id ?>)"><?php echo $button_label ?></button>
-                </div>
             </form>
+            <div class="d-flex flex-end">
+                <a class="btnForm btnSecondary" href="index.php">Voltar</a>
+                <button class="btnForm btnPrimary" onclick="sendToPHP(<?php echo '\'' . $type . '\',' . $item_id ?>)"><?php echo $button_label ?></button>
+            </div>
         </div>
     </div>
     <footer>
         <!--div><img src="imagens/logo.svg" alt="Logo" class="footer-logo"></div-->
         <h4>Desenvolvido por XDevs LTDA.</h4>
         <!--div class="social-midia">
-            <div class="icons"><i class="fa fa-facebook"></i></div>
-            <div class="icons"><i class="fa fa-instagram"></i></div>
-            <div class="icons"><i class="fa fa-twitter"></i></div>
-        </div-->
+        <div class="icons"><i class="fa fa-facebook"></i></div>
+        <div class="icons"><i class="fa fa-instagram"></i></div>
+        <div class="icons"><i class="fa fa-twitter"></i></div>
+    </div-->
     </footer>
 </body>
 

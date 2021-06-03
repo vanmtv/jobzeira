@@ -7,11 +7,15 @@ if($_POST['type'] == 'New'){
     $sql = "INSERT INTO `anuncios`(`servico_id`,`titulo`, `profissional_id`, `valor`, `descricao`, `foto_path`) VALUES (" . $_POST['servico'] .
      ",'" . $_POST['titulo']. "',". $_POST['profissional'] ."," . $_POST['valor'] . ",'" . $_POST['descricao'] . "','fotopath')";
 }
-else{
+else if($_POST['type'] == 'Edit'){
     $message = 'editado';
     $sql = "UPDATE `anuncios` SET `servico_id` =" . $_POST['servico'] . ",`titulo`= '" . $_POST['titulo'] . "'," . "`valor` =" . $_POST['valor'] . "," . "`descricao` =" . "'" . $_POST['descricao'] . "'" . " WHERE  `anuncio_id` = " . $_POST['id'];
 }
-$insert = mysqli_query($connect,$sql);
+else{
+    $message = 'deletado';
+    $sql = "DELETE FROM `anuncios` WHERE  `anuncio_id` = " . $_POST['id'];
+}
+$action = mysqli_query($connect,$sql);
  
 //$name = $_FILES['file']['name'];
 //$target_dir = "imagens/itens";
@@ -38,14 +42,14 @@ $insert = mysqli_query($connect,$sql);
     }*/
 //}
 
-if($insert){
+if($action){
     $arrResult = array(     
-        'result' => 'Anúncio ' . $message . ' com sucesso! Parabéns'
+        'result' => 'Anúncio ' . $message . ' com sucesso!'
     );
 }
 else{
     $arrResult = array(     
-        'result' => $sql
+        'result' => 'Oops... tivemos um problema, tente novamente.'
     );
 }
 
