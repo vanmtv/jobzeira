@@ -43,6 +43,7 @@
     box-shadow: 0 0 0 0;
     border: 0 none;
     outline: 0;
+    font-size: 16pt;
 }
 
 .raised textarea{
@@ -59,3 +60,7 @@
     line-height: 54px;
     margin-top: 120px;
 }*/
+
+.text-color{
+    color:black;
+}
