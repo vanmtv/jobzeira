@@ -1,13 +1,57 @@
-function exportPDF() {
+setTimeout(window.onload = function() {
+    getContrato();
+}, 200);
+
+function getContrato() {
     var urlParams = new URLSearchParams(window.location.search);
-    console.log(urlParams);
     $.ajax({
         url: 'http://localhost/jobzeira/scripts/getContrato.php',
         type: 'POST',
 
         data: function() {
             var data = new FormData();
-            data.append('anuncio', 1);
+            data.append('anuncio', urlParams.get('anuncio'));
+            data.append('cliente', localStorage.getItem('jobzeira_id'));
+            return data;
+        }(),
+        success: function(data) {
+            var contrato = JSON.parse(data);
+            formPopulate(contrato);
+        },
+        error: function(data) {
+            window.location.href = 'index.php';
+        },
+        complete: function(data) {
+
+        },
+        cache: false,
+        contentType: false,
+        processData: false
+    });
+}
+
+function formPopulate(contrato) {
+    var date = new Date();
+    $('#nome-solicitante').val(contrato.clienteName);
+    $('#nome-profissional').val(contrato.profissionalName);
+    $('#cpf-solicitante').val(contrato.clienteDoc);
+    $('#cpf-profissional').val(contrato.profissionalDoc);
+    $('#servico-contratado').val(contrato.servicoTitle);
+    $('#data-contratacao').val(date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear());
+    $('#descricao-anuncio').val(contrato.itemDesc);
+    $('#descricao-servico').val(contrato.servicoDesc);
+    $('#valor').val(contrato.value);
+}
+
+function exportPDF() {
+    var urlParams = new URLSearchParams(window.location.search);
+    $.ajax({
+        url: 'http://localhost/jobzeira/scripts/getContrato.php',
+        type: 'POST',
+
+        data: function() {
+            var data = new FormData();
+            data.append('anuncio', urlParams.get('anuncio'));
             data.append('cliente', localStorage.getItem('jobzeira_id'));
             return data;
         }(),
@@ -28,30 +72,31 @@ function exportPDF() {
 }
 
 function getPDF(pdf) {
-    var html = "<h1 style=\"margin-bottom: 30px;font-weight: 700;font-size: 32px;\">Contrato nº" + Math.random() + "</h1>";
-    html += "<h4 style=\"padding-bottom: 0px;font-weight: 700;font-size: 20px;\">Descrição do Serviço Anúncio contratado</h4>"
-    html += "<p style=\"margin-bottom: 16px;\">" + pdf.itemTitle + "</p>";
+    var date = new Date();
+    var html = "<h1 style=\"margin-bottom: 32px;font-weight: 700;font-size: 32px;\">Contrato</h1>";
+    html += "<h4 style=\"padding-bottom: 0px;font-weight: 700;font-size: 20px;\">Descrição do Anúncio Contratado</h4>"
+    html += "<p style=\"margin-bottom: 8px;\">" + pdf.itemTitle + "</p>";
     html += "<p style=\"margin-bottom: 16px;\">" + pdf.itemDesc + "</p>";
     html += "<h4 style=\"margin-bottom: 0px;font-weight: 700;font-size: 20px;\">Descrição do Serviço Contratado</h4>";
     html += "<p style=\"margin-bottom: 16px;\">" + pdf.servicoTitle + "</p>";
     html += "<p style=\"margin-bottom: 16px;\">" + pdf.servicoDesc + "</p>";
     html += "<h4 style=\"margin-bottom: 0px;font-weight: 700;font-size: 20px;\">Valor</h3>";
     html += "<p style=\"margin-bottom: 16px;\">" + pdf.value + "</p>";
-    html += "<h4 style=\"margin-bottom: 0px;font-weight: 700;font-size: 20px;\">Dados do Profissiona liberall</h3>";
-    html += "<p>Nome: " + pdf.profissionalName + "<br>";
-    html += "<p>Telefone: " + pdf.profissionalTel + "<br>";
-    html += "<p>Email: " + pdf.profissionalEmail + "<br>";
-    html += "<p>" + pdf.profissionalDocType + ": " + pdf.profissionalDoc + "<br>";
+    html += "<h4 style=\"margin-bottom: 0px;font-weight: 700;font-size: 20px;\">Dados do Profissional Liberal</h3>";
+    html += "<p style=\"margin-bottom: 16px;\">Nome: " + pdf.profissionalName + "<br>";
+    html += "Telefone: " + pdf.profissionalTel + "<br>";
+    html += "Email: " + pdf.profissionalEmail + "<br>";
+    html += pdf.profissionalDocType + ": " + pdf.profissionalDoc + "</p>";
     html += "<h4 style=\"margin-bottom: 0px;font-weight: 700;font-size: 20px;\">Dados do Contratante</h3>";
-    html += "<p>Nome: " + pdf.clienteName + "<br>";
-    html += "<p>Telefone: " + pdf.clienteTel + "<br>";
-    html += "<p>Email: " + pdf.clienteEmail + "<br>";
-    html += "<p>" + pdf.clienteDocType + ": " + pdf.clienteDoc + "<br>";
-    html += "<p style=\"margin-bottom: 16px;\">Telefone: " + pdf.profissionalTel + "<br>";
+    html += "<p style=\"margin-bottom: 16px;\">Nome: " + pdf.clienteName + "<br>";
+    html += "Telefone: " + pdf.clienteTel + "<br>";
+    html += "Email: " + pdf.clienteEmail + "<br>";
+    html += pdf.clienteDocType + ": " + pdf.clienteDoc + "</p>";
     html += "<h4 style=\"margin-bottom: 0px;font-weight: 700;font-size: 20px;\">Assinatura do profissional liberal</h4>";
     html += "<p style=\"margin-bottom: 16px;\">____________________________</p>";
     html += "<h4 style=\"margin-bottom: 0px;font-weight: 700;font-size: 20px;\">Assinatura do contratante</h4>";
     html += "<p style=\"margin-bottom: 16px;\">____________________________</p>";
+    html += "<p style=\"margin-bottom: 16px;\">Data de Contratação: " + date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear() + "</p>";
     html += "<h4 style=\"margin-bottom: 0px;font-weight: 700;font-size: 20px;\">Notas</h4>";
     html += "<p style=\"margin-bottom: 16px;\">*** Texto de não responsabilidade ***</p>";
 

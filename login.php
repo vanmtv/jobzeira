@@ -39,10 +39,10 @@
                     <div id="txtSenha"></div>
                 </label>
             </div>
-            <div class="btn-logar">
+        </form>
+        <div class="btn-logar">
                 <button type="submit" class="btnForm btnPrimary" onclick='logar()'>Entrar</button>
             </div>
-        </form>
         <a style="text-align: center;display: block; color: #333; margin-top: 16px;"  href="profile.php">Cadastrar</a>
     </div>
     </div>
