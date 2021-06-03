@@ -1,12 +1,3 @@
-setTimeout(() => {
-    let role = localStorage.getItem('jobzeira_funcao');
-
-    if (role == 'cliente' || !role) {
-        let domain = window.location.hostname;
-        window.location.href = 'http://' + domain + '/jobzeira/login.php';
-    }
-}, 200);
-
 var filledForm = false;
 
 function isFilled() {
@@ -30,19 +21,22 @@ function isFilled() {
 }
 
 function sendToPHP(type, id) {
-    alert(type);
     $.ajax({
-        url: 'http://localhost/jobzeira/scripts/submitAnuncio.php',
+        url: 'http://localhost/jobzeira/scripts/submitUser.php',
         type: 'POST',
 
         data: function() {
             var data = new FormData();
-            data.append('titulo', $("#titulo").val());
-            data.append('servico', $("#servico").val());
-            data.append('profissional', localStorage.getItem('jobzeira_id'));
-            data.append('valor', $("#valor").val());
-            data.append('descricao', $("#descricao").val());
+            data.append('nome', $("#nome").val());
+            if( $("#cliente").is(':checked'))
+            data.append('funcao', $("#cliente").val())
+            else
+            data.append('funcao', $("#profissional").val());
+            data.append('document', $("#document").val());
+            data.append('date', $("#date").val());
             data.append('file', $("#file").prop('files')[0]);
+            data.append('email', $("#email").val());
+            data.append('senha', $("#senha").val());
             data.append('type', type);
             data.append('id', id);
             return data;

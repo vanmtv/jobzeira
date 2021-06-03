@@ -2,7 +2,7 @@
 
 include_once '../db_connect.php';
 
-if($_GET['type' == 'New']){
+if($_POST['type'] == 'New'){
     $message = 'cadastrado';
     $sql = "INSERT INTO `anuncios`(`servico_id`,`titulo`, `profissional_id`, `valor`, `descricao`, `foto_path`) VALUES (" . $_POST['servico'] .
      ",'" . $_POST['titulo']. "',". $_POST['profissional'] ."," . $_POST['valor'] . ",'" . $_POST['descricao'] . "','fotopath')";
@@ -54,3 +54,4 @@ die();
 
 ?>
 
+<?php
