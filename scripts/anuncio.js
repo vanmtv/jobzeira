@@ -30,7 +30,7 @@ function isFilled() {
 }
 
 function sendToPHP(type, id) {
-
+    alert(type);
     $.ajax({
         url: 'http://localhost/jobzeira/scripts/submitAnuncio.php',
         type: 'POST',

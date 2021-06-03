@@ -18,6 +18,8 @@
     <?php
     include_once 'db_connect.php';
     $item_id = $_GET['item'];
+    if(!$item_id) $item_id = -1;
+    
     $user_id = $_GET['id'];
     $title = 'Anunciar';
     $class = 'mandatory';
@@ -114,7 +116,7 @@
                 </div>
                 <div class="d-flex flex-end">
                     <a class="btnForm btnSecondary" href="index.php">Voltar</a>
-                    <button class="btnForm btnPrimary" onclick="sendToPHP('<?php echo $type . '\' ,' . $item_id ?>)"><?php echo $button_label ?></button>
+                    <button class="btnForm btnPrimary" onclick="sendToPHP(<?php echo '\'' . $type . '\',' . $item_id ?>)"><?php echo $button_label ?></button>
                 </div>
             </form>
         </div>
