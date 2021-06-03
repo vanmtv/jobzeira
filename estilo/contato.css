@@ -1,0 +1,124 @@
+.screenContato{
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 12.5%;
+    margin-top: 80px;
+}
+
+.screenContato h1{
+    font-family: Squada One;
+    font-size: 75px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 79px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+.telaContato{
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.formContato{
+    margin-top: 20px;
+    background-color: #FCA701;
+    border-radius: 10px;
+    padding: 40px;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+
+    font-family: Squada One;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 34px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+.formContato > input{
+    border: none;
+    border-radius: 0.5em;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding: 5px;
+    outline:none;
+    height: 61px;
+    width: 90%;
+
+    font-family: Squada One;
+    font-size: 32px;
+    left: 21px;
+}
+
+#mensagemContato{
+    border: none;
+    border-radius: 0.5em;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding: 5px;
+    outline:none;
+    height: 50%;
+    width: 90%;
+
+    font-family: Squada One;
+    font-size: 32px;
+    left: 21px;
+}
+
+#mensagemContato > textarea{
+    border: none;
+    border-radius: 0.5em;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding: 5px;
+    outline:none;
+    height: 50%;
+    width: 90%;
+
+    font-family: Squada One;
+    font-size: 32px;
+    height: 61px;
+    left: 21px;
+}
+
+#cadastrarContato{
+    height: 61px;
+    width: 177.5px;
+    border: none;
+    border-radius: 0.5em;
+    outline:none;
+    background-color: #2352A8;
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+
+    margin-top: 21px;
+    font-family: Squada One;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 34px;
+    letter-spacing: 0em;
+    text-align: center;
+}
+
+#editarContato:hover{
+    cursor: pointer;
+    background-color: rgb(56, 105, 196)
+}
+
+#cadastrarContato:hover{
+    cursor: pointer;
+    background-color: rgb(56, 105, 196);
+}
+
+.buttonContato{
+    margin-right: 80px;
+    display: flex;
+    flex-direction: row-reverse;
+}
