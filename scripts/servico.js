@@ -34,19 +34,19 @@ function validaNumTel(){
 
 function validaDescricao(){
     let txtDescricao= document.getElementById('txtDescricao')
-    if(descricao.value <30){
-        txtDescricao.innerHTML = 'Descricao precisa ter no minimo 30 caracteres'
+    if(descricao.value != ''){
+        txtDescricao.innerHTML = 'Descricao não pode ser vazia'
         txtDescricao.style.color = 'red'
     }
     else {
-        txtNumTel.innerHTML ='Descrição válida'
-        txtNumTel.style.color = '#2352A8'
+        txtDescricao.innerHTML ='Descrição válida'
+        txtDescricao.style.color = '#2352A8'
         descricaoOk = true
     }
 }
 
 function cadastrar(){
-    if( nomeServicoOk == true && numTelOk == true && descricaoOk == true){
+    if( nomeServicoOk == true && numTelOk == true){
         alert('Serviço cadastrado com sucesso')
     }
     else{

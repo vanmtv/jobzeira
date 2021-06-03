@@ -1,63 +1,31 @@
-body{
-    background-color:white;
-    
+body {
+    background-color: white;
 }
 
-.box-login{
-    height: 60vh;
-    width: 40vw;
-    margin-top: 200px;
-    margin-left: 400px;
-    margin-bottom: 100px;
-    padding-bottom: 20px;
-    position:center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;   
-    background-color: #FCA701; 
-    border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
-
+.box-login {
+    margin: 200px auto;
+    width: 300px;
+    background-color: #ececec;
+    box-shadow: 5px 5px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
-
-.box-login > form > input{
+.box-login>form>input {
     border: none;
     border-radius: 0.5em;
     margin-bottom: 10px;
     padding: 5px;
-    outline:none;
+    outline: none;
     height: 20%;
     width: 90%;
 }
 
-.btn-logar{
-    margin-left:10px;
+.btn-logar {
+    margin-left: 10px;
     margin-top: 10px;
-    height: 40%;
-    width: 95%;
+    width: 98%;
     display: flex;
     justify-content: flex-end;
 }
-
-.btn-logar > button{
-    height: 50%;
-    width: 50%;
-    border: none;
-    border-radius: 2px;
-    outline:none;
-    background-color: #2352A8;
-    color: white;
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
-}
-
-.btn-logar> button:hover{
-    cursor: pointer;  
-    background-color: rgb(56, 105, 196);
-}
-
-
 
 .text-input {
     margin: 5px;
@@ -65,16 +33,17 @@ body{
     font-size: 12pt;
 }
 
-.title{
-    font-size: medium;
-    margin-bottom: 15px;
+.title {
+    font-weight: normal;
+    color: black;
+    padding-bottom: 16px;
     text-align: start;
+    font-size: 25px;
 }
 
-#txtName{
-    font-size: 10pt;
-}
-
-#txtSenha{
-    font-size: 10pt;
+.formulario .text-input #txtEmail,
+.formulario .text-input #txtSenha {
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 8px;
 }

@@ -26,6 +26,8 @@
         $sql_user = "SELECT `nome` FROM `usuarios` WHERE `usuario_id` = " . $user_id;
         $sql_servico = "SELECT `servico_id`,`titulo` FROM `servicos` WHERE 1";
         $query_servico = mysqli_query($connect,$sql_servico);
+        $button_label = 'Cadastrar';
+        $type = 'New';
     }
     else{
         $sql_item = "SELECT * FROM `anuncios` WHERE `anuncio_id` = " . $item_id;
@@ -35,6 +37,8 @@
         $title = $item[1];
         $class .= ' filled';
         $sql_user = "SELECT `nome` FROM `usuarios` WHERE `usuario_id` = " . $item[3];
+        $type = 'Edit';
+        $button_label = 'Salvar';
     };
 
     $query_user = mysqli_query($connect,$sql_user);
@@ -101,8 +105,17 @@
                          onchange="isFilled()"><?php if($item) echo $item[5]?></textarea>
                     </label>
                 </div>
-                <button>Voltar</button>
-                <button onclick="sendToPHP()">Enviar</button>
+                <div class="raised">
+                    <div class="paperclip">
+                        <span class="fa fa-paperclip" aria-hidden="true"></span>
+                        <span class="label">Anexar foto</span>
+                        <input type='file' name='file' id="file"/>
+                    </div>
+                </div>
+                <div class="d-flex flex-end">
+                    <a class="btnForm btnSecondary" href="index.php">Voltar</a>
+                    <button class="btnForm btnPrimary" onclick="sendToPHP('<?php echo $type . '\' ,' . $item_id ?>)"><?php echo $button_label ?></button>
+                </div>
             </form>
         </div>
     </div>
