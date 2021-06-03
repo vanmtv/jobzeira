@@ -1,0 +1,10 @@
+div.delete {
+    display: flex;
+    justify-content: flex-end;
+}
+
+button.btnDelete {
+    display: block;
+    margin-bottom: 8px;
+    box-shadow: 2px 2px 1px 1px rgba(0, 0, 0, 0.3);
+}

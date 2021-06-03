@@ -98,8 +98,8 @@ select {
 
 footer {
     /*display: flex;
-    justify-content: space-between;
-    align-items: center;*/
+justify-content: space-between;
+align-items: center;*/
     background: #333;
     padding: 16px 32px;
     color: white;
@@ -239,14 +239,16 @@ footer h4 {
     justify-content: space-around;
 }
 
-.raised .radio-label label, .half .radio-label label{
+.raised .radio-label label,
+.half .radio-label label {
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     font-weight: 400;
     display: inline-block;
 }
 
-.raised .radio-label input, .half .radio-label input {
+.raised .radio-label input,
+.half .radio-label input {
     display: inline-block;
     width: auto;
 }
@@ -304,6 +306,11 @@ span.filled {
 .btnPrimary {
     color: white;
     background-color: #0f710f;
+}
+
+.btnDelete {
+    background: red;
+    color: white;
 }
 
 .paperclip {

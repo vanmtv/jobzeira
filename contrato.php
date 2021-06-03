@@ -11,6 +11,14 @@
     <link rel="stylesheet" href="estilo/contrato.css">
     <script src="scripts/home.js"></script>
     <script src="scripts/menu.js"></script>
+    <script src="scripts/contrato.js"></script>
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+    <!-- pdfmake files: -->
+    <script src='https://cdn.jsdelivr.net/npm/pdfmake@latest/build/pdfmake.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/pdfmake@latest/build/vfs_fonts.min.js'></script>
+    <!-- html-to-pdfmake file: -->
+    <script src="https://cdn.jsdelivr.net/npm/html-to-pdfmake/browser.js"></script>
     <title>Jobzeira</title>
 </head>
 
@@ -25,57 +33,51 @@
             </ul>
         </nav>
     </header>
+  
+    <div class="content">
+        <h1 class="titulo">Contrato Nº: 001923</h1>
+        <!--div class="box-contrato"-->
+        <div class="formulario">
+            <form>
+                <div class="half">
+                    <label for="nome-solicitante">Nome do solicitante:
+                        <input type="text" readonly="readonly" id="nome-solicitante" placeholder="Antonio Santos">
+                    </label>
 
-    <div class="container flex-container ">
-        <div>
-            <h1 class="title-contrato">Contrato Nº: 00010</h1>
-        </div>
-        <div class="box-contrato">
-        
-            <div class="form-contrato">
-                <form>
-                    <div class="half">
-                        <label for="nome-solicitante">Nome do solicitante:
-                            <input type="text" readonly="readonly" id="nome-solicitante" placeholder="Antonio Santos">
-                        </label>
+                    <label>Nome do profissional liberal:
+                        <input type="text" readonly="readonly" id="nome-profissional" placeholder="João da Silva">
+                    </label>
+                </div>
+                <div class="half">
+                    <label>CPF do solicitante:
+                        <input type="text" readonly="readonly" id="cpf-solicitante" placeholder="798.657.010-57">
+                    </label>
 
-                        <label>Nome do profissional liberal:
-                            <input type="text" readonly="readonly" id="nome-profissional" placeholder="João da Silva">
-                        </label>
+                    <label for="cpf-prof">CPF do profissional
+                        <input type="text" readonly="readonly" id="cpf-profissional" placeholder="367.423.170-00">
+                    </label>
+                </div>
+                <div class="half">
+                    <label for="servico-contratado">Serviço Contratado:
+                        <input type="text" readonly="readonly" id="servico-contratado" placeholder="Médico">
+                    </label>
 
-                    </div>
-                    <div class="half">
-                        <label>CPF do solicitante:
-                            <input type="text" readonly="readonly" id="cpf-solicitante" placeholder="798.657.010-57">
-                        </label>
-
-                        <label for="cpf-prof">CPF do profissional
-                            <input type="text" readonly="readonly" id="cpf-profissional" placeholder="367.423.170-00">
-                        </label>
-
-                    </div>
-                    <div class="half">
-                        <label for="servico-contratado">Serviço Contratado:
-                            <input type="text" readonly="readonly" id="servico-contratado" placeholder="Médico">
-                        </label>
-
-                        <label for="servico-contratado">Data de Contratação:
-                            <input type="text" readonly="readonly" id="data-contratacao" placeholder="02/06/2021">
-                        </label>
-
-                    </div>
-                    <div class="raised">
-                        <label>Descrição do serviço anunciado:
-                            <textarea readonly id="descricao-contrato" placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."></textarea>
-                        </label>
-
-                    </div>
-                    <div class="d-flex flex-end">
-                        <a class="btnForm btnSecondary">Voltar</a>
-                        <button class="btnForm btnPrimary">Contratar</button>
-                    </div>
-                </form>
+                    <label for="servico-contratado">Data de Contratação:
+                        <input type="text" readonly="readonly" id="data-contratacao" placeholder="02/06/2021">
+                    </label>
+                </div>
+                <div class="raised">
+                    <label>Descrição do serviço anunciado:
+                        <textarea readonly id="descricao-contrato" placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."></textarea>
+                    </label>
+                </div>
+            </form>
+            <br>
+            <div class="d-flex flex-end">
+                <!--a class="btnForm btnSecondary">Voltar</a-->
+                <button class="btnForm btnPrimary" onclick="exportPDF()">Gerar PDF</button>
             </div>
+            <!--/div-->
         </div>
     </div>
 

@@ -1,10 +1,8 @@
 setTimeout(() => {
     let role = localStorage.getItem('jobzeira_funcao');
 
-    if (role == 'cliente' || !role) {
-        let domain = window.location.hostname;
-        window.location.href = 'http://' + domain + '/jobzeira/login.php';
-    }
+    if (role == 'cliente' || !role)
+        window.location.href = 'login.php';
 }, 200);
 
 var filledForm = false;
@@ -30,7 +28,17 @@ function isFilled() {
 }
 
 function sendToPHP(type, id) {
-    alert(type);
+    if (!filledForm && type != 'Delete') {
+        alert('Ooops parece que você não preencheu tudo o que precisamos');
+        return;
+    }
+
+    if (type == 'Delete') {
+        var awnser = prompt('Você está certo disso? Digite "S" para sim.');
+        if (awnser.toLocaleLowerCase() != 's')
+            return;
+    }
+
     $.ajax({
         url: 'http://localhost/jobzeira/scripts/submitAnuncio.php',
         type: 'POST',
@@ -50,6 +58,7 @@ function sendToPHP(type, id) {
         success: function(data) {
             var obj = JSON.parse(data);
             alert(obj.result);
+            window.location.href = 'meus_itens.php?id=' + localStorage.getItem('jobzeira_id');
         },
         error: function(data) {
             alert(data);

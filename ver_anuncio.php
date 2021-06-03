@@ -38,7 +38,7 @@
             <div class="banner-img" style='background-image: url("<?php echo $item[3] ?>")'></div>
             <div class="actions">
                 <div class="buttons">
-                    <button class="btnPrimary btnForm">Contratar</button>
+                    <button class="btnPrimary btnForm" onclick="goToContract(<?php echo $item[0]?>)">Contratar</button>
                     <a href="index.php"><button class="btnSecondary btnForm">Voltar</button></a>
                 </div>
                 <h1 class="price"><?php echo $item[2] ?></h1>
