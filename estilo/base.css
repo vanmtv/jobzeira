@@ -232,6 +232,25 @@ footer h4 {
     margin-right: 32px;
 }
 
+.radio-label {
+    display: flex;
+    align-items: center;
+    height: 38px;
+    justify-content: space-around;
+}
+
+.raised .radio-label label, .half .radio-label label{
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    display: inline-block;
+}
+
+.raised .radio-label input, .half .radio-label input {
+    display: inline-block;
+    width: auto;
+}
+
 span.mandatory {
     color: red;
 }
