@@ -1,8 +1,10 @@
 setTimeout(() => {
     let role = localStorage.getItem('jobzeira_funcao');
+    let id = localStorage.getItem('jobzeira_id');
 
     if (role == 'cliente' || !role)
         window.location.href = 'login.php';
+    $('#actions').append('<a class="btnForm btnSecondary" href="meus_itens.php?id='+ id +'">Voltar</a>')
 }, 200);
 
 var filledForm = false;
@@ -46,7 +48,6 @@ function sendToPHP(type, id) {
         data: function() {
             var data = new FormData();
             data.append('titulo', $("#titulo").val());
-            data.append('servico', $("#servico").val());
             data.append('profissional', localStorage.getItem('jobzeira_id'));
             data.append('valor', $("#valor").val());
             data.append('descricao', $("#descricao").val());

@@ -4,12 +4,12 @@ include_once '../db_connect.php';
 
 if($_POST['type'] == 'New'){
     $message = 'cadastrado';
-    $sql = "INSERT INTO `anuncios`(`servico_id`,`titulo`, `profissional_id`, `valor`, `descricao`, `foto_path`) VALUES (" . $_POST['servico'] .
-     ",'" . $_POST['titulo']. "',". $_POST['profissional'] ."," . $_POST['valor'] . ",'" . $_POST['descricao'] . "','fotopath')";
+    $sql = "INSERT INTO `anuncios`(`titulo`, `profissional_id`, `valor`, `descricao`, `foto_path`) VALUES ('" . 
+    $_POST['titulo']. "',". $_POST['profissional'] ."," . $_POST['valor'] . ",'" . $_POST['descricao'] . "','fotopath')";
 }
 else if($_POST['type'] == 'Edit'){
     $message = 'editado';
-    $sql = "UPDATE `anuncios` SET `servico_id` =" . $_POST['servico'] . ",`titulo`= '" . $_POST['titulo'] . "'," . "`valor` =" . $_POST['valor'] . "," . "`descricao` =" . "'" . $_POST['descricao'] . "'" . " WHERE  `anuncio_id` = " . $_POST['id'];
+    $sql = "UPDATE `anuncios` SET `titulo`= '" . $_POST['titulo'] . "'," . "`valor` =" . $_POST['valor'] . "," . "`descricao` =" . "'" . $_POST['descricao'] . "'" . " WHERE  `anuncio_id` = " . $_POST['id'];
 }
 else{
     $message = 'deletado';

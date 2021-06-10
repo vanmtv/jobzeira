@@ -1,6 +1,6 @@
 setTimeout(window.onload = function() {
     getContrato();
-}, 200);
+}, 1000);
 
 function getContrato() {
     var urlParams = new URLSearchParams(window.location.search);
@@ -36,10 +36,9 @@ function formPopulate(contrato) {
     $('#nome-profissional').val(contrato.profissionalName);
     $('#cpf-solicitante').val(contrato.clienteDoc);
     $('#cpf-profissional').val(contrato.profissionalDoc);
-    $('#servico-contratado').val(contrato.servicoTitle);
     $('#data-contratacao').val(date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear());
+    $('#titulo-anuncio').val(contrato.itemTitle);
     $('#descricao-anuncio').val(contrato.itemDesc);
-    $('#descricao-servico').val(contrato.servicoDesc);
     $('#valor').val(contrato.value);
 }
 
@@ -74,12 +73,9 @@ function exportPDF() {
 function getPDF(pdf) {
     var date = new Date();
     var html = "<h1 style=\"margin-bottom: 32px;font-weight: 700;font-size: 32px;\">Contrato</h1>";
-    html += "<h4 style=\"padding-bottom: 0px;font-weight: 700;font-size: 20px;\">Descrição do Anúncio Contratado</h4>"
+    html += "<h4 style=\"padding-bottom: 0px;font-weight: 700;font-size: 20px;\">Descrição do Serviço Contratado</h4>"
     html += "<p style=\"margin-bottom: 8px;\">" + pdf.itemTitle + "</p>";
     html += "<p style=\"margin-bottom: 16px;\">" + pdf.itemDesc + "</p>";
-    html += "<h4 style=\"margin-bottom: 0px;font-weight: 700;font-size: 20px;\">Descrição do Serviço Contratado</h4>";
-    html += "<p style=\"margin-bottom: 16px;\">" + pdf.servicoTitle + "</p>";
-    html += "<p style=\"margin-bottom: 16px;\">" + pdf.servicoDesc + "</p>";
     html += "<h4 style=\"margin-bottom: 0px;font-weight: 700;font-size: 20px;\">Valor</h3>";
     html += "<p style=\"margin-bottom: 16px;\">" + pdf.value + "</p>";
     html += "<h4 style=\"margin-bottom: 0px;font-weight: 700;font-size: 20px;\">Dados do Profissional Liberal</h3>";
@@ -98,7 +94,7 @@ function getPDF(pdf) {
     html += "<p style=\"margin-bottom: 16px;\">____________________________</p>";
     html += "<p style=\"margin-bottom: 16px;\">Data de Contratação: " + date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear() + "</p>";
     html += "<h4 style=\"margin-bottom: 0px;font-weight: 700;font-size: 20px;\">Notas</h4>";
-    html += "<p style=\"margin-bottom: 16px;\">*** Texto de não responsabilidade ***</p>";
+    html += "<p style=\"margin-bottom: 16px;\">Os termos deste contrato estão válidos somente aos envolvidos, a plataforma Jobzeira não se responsabiliza por quaisquer problemas oriundos da prestação do serviço descrito.</p>";
 
 
     var val = htmlToPdfmake(html);

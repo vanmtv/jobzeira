@@ -19,7 +19,6 @@ window.onload = function() {
         case 'admin':
             itens.push({ url: 'anuncio.php', label: 'Anunciar', param: 'id=' + id });
             itens.push({ url: 'meus_itens.php', label: 'Meus anúncios', param: 'id=' + id });
-            itens.push({ url: 'servico.php', label: 'Serviço' });
             itens.push({ url: 'logout.php', label: 'Sair' });
             break;
         default:
