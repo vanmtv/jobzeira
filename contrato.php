@@ -10,9 +10,9 @@
     <link rel="stylesheet" href="estilo/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="estilo/contrato.css">
     <script src="scripts/home.js"></script>
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="scripts/contrato.js"></script>
     <script src="scripts/menu.js"></script>
-    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
 
     <!-- pdfmake files: -->
     <script src='https://cdn.jsdelivr.net/npm/pdfmake@latest/build/pdfmake.min.js'></script>
@@ -33,7 +33,7 @@
             </ul>
         </nav>
     </header>
-  
+
     <div class="content">
         <h1 class="titulo">Pré-visualização do Contrato</h1>
         <div class="formulario">
@@ -49,35 +49,31 @@
                 </div>
                 <div class="half">
                     <label>Documento do Contratante
-                        <input type="text" readonly="readonly" id="cpf-solicitante" placeholder="798.657.010-57">
+                        <input type="text" readonly="readonly" id="cpf-solicitante">
                     </label>
 
                     <label for="cpf-prof">Documento do Profissional
-                        <input type="text" readonly="readonly" id="cpf-profissional" placeholder="367.423.170-00">
+                        <input type="text" readonly="readonly" id="cpf-profissional">
                     </label>
                 </div>
                 <div class="half">
-                    <label for="servico-contratado">Serviço Contratado
-                        <input type="text" readonly="readonly" id="servico-contratado" placeholder="Médico">
+                    <label for="valor">Valor
+                        <input type="text" readonly="readonly" id="valor">
                     </label>
+
 
                     <label for="servico-contratado">Data de Contratação
                         <input type="text" readonly="readonly" id="data-contratacao">
                     </label>
                 </div>
-                <div class="half">
-                    <label for="valor">Valor
-                        <input type="text" readonly="readonly" id="valor" placeholder="2000">
-                    </label>
-                </div>
                 <div class="raised">
-                    <label>Descrição do Anúncio
-                        <textarea readonly rows="5" id="descricao-anuncio" placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."></textarea>
+                    <label for="titulo-anuncio">Serviço Contratado
+                        <input type="text" readonly="readonly" id="titulo-anuncio">
                     </label>
                 </div>
                 <div class="raised">
                     <label>Descrição do Serviço
-                        <textarea readonly rows="5" id="descricao-servico" placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."></textarea>
+                        <textarea readonly rows="5" id="descricao-anuncio"></textarea>
                     </label>
                 </div>
             </form>

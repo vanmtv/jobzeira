@@ -33,8 +33,6 @@
 
     if ($item_id == -1 || !$item_id) {
         $sql_user = "SELECT `nome` FROM `usuarios` WHERE `usuario_id` = " . $user_id;
-        $sql_servico = "SELECT `servico_id`,`titulo` FROM `servicos` WHERE 1";
-        $query_servico = mysqli_query($connect, $sql_servico);
         $button_label = 'Cadastrar';
         $type = 'New';
     } else {
@@ -79,20 +77,6 @@
                 </div>
                 <div class="half">
                     <label>
-                        <span class="<?php echo $class ?>">*</span>
-                        Serviço Anunciado
-                        <select class="<?php echo $class ?>" name="servico" id="servico" onchange="isFilled()">
-                            <?php
-                            if ($item) echo "<option value='" . $item[2] . "'  >" . $item[2] . "</option>";
-                            else {
-                                while ($servico = mysqli_fetch_array($query_servico)) {
-                                    echo "<option value='" . $servico[0] . "'  >" . $servico[1] . "</option>";
-                                }
-                            }
-                            ?>
-                        </select>
-                    </label>
-                    <label>
                         Nome do profissional
                         <input type="text" name="profissional" value="<?php echo $user[0] ?>" id="profissional" readonly>
                     </label>
@@ -111,7 +95,7 @@
                 <div class="raised">
                     <label>
                         <span class="<?php echo $class ?>">*</span>
-                        Descrição do serviço anunciado
+                        Descrição do Serviço
                         <textarea rows="6" class="<?php echo $class ?>" name="descricao" id="descricao" onchange="isFilled()"><?php if ($item) echo $item[5] ?></textarea>
                     </label>
                 </div>
@@ -124,7 +108,7 @@
                 </div>
             </form>
             <div class="d-flex flex-end">
-                <a class="btnForm btnSecondary" href="index.php">Voltar</a>
+                <span id="actions"></span>
                 <button class="btnForm btnPrimary" onclick="sendToPHP(<?php echo '\'' . $type . '\',' . $item_id ?>)"><?php echo $button_label ?></button>
             </div>
         </div>

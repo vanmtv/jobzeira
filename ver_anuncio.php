@@ -17,13 +17,9 @@
 <body>
     <?php
     include_once 'db_connect.php';
-    $sql_item = "SELECT `anuncio_id`,`titulo`,`valor`,`foto_path`,`descricao`,`servico_id` FROM `anuncios` WHERE `anuncio_id`=" . "'" . $_GET["item"] . "'";
+    $sql_item = "SELECT `anuncio_id`,`titulo`,`valor`,`foto_path`,`descricao` FROM `anuncios` WHERE `anuncio_id`=" . "'" . $_GET["item"] . "'";
     $resultado = mysqli_query($connect, $sql_item);
     $item = mysqli_fetch_array($resultado);
-
-    $sql_service = "SELECT `servico_id`,`titulo`,`descricao` FROM `servicos` WHERE `servico_id`=" . $item[5];
-    $resultado = mysqli_query($connect, $sql_service);
-    $service = mysqli_fetch_array($resultado);
     ?>
     <header>
         <nav class="menu">
@@ -45,11 +41,7 @@
             </div>
         </div>
         <div class="longText">
-            <h2>Descrição do Serviço - <?php echo $service[1] ?></h2>
-            <div><?php echo $service[2] ?></div>
-        </div>
-        <div class="longText">
-            <h2>Descrição do Anúncio</h2>
+            <h2>Descrição do Serviço</h2>
             <div><?php echo $item[4] ?></div>
         </div>
     </div>
