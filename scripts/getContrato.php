@@ -1,7 +1,7 @@
 <?php
 
     include_once '../db_connect.php';
-    $sqlItem = "SELECT `titulo`, `profissional_id`, `valor`, `descricao` FROM `anuncios` WHERE `anuncio_id` = " . $_POST['anuncio'];
+    $sqlItem = "SELECT `titulo`, `profissional_id`, `valor`, `descricao` FROM `servicos` WHERE `servico_id` = " . $_POST['servico'];
     $awnser = mysqli_query($connect, $sqlItem);
     $item = mysqli_fetch_array($awnser);
 

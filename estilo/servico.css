@@ -1,92 +1,10 @@
-.screenServico{
+div.delete {
     display: flex;
-    justify-content: flex-start;
-    margin-left: 12.5%;
-    margin-top: 120px;
-    font-family: 'Roboto', sans-serif;
-   
+    justify-content: flex-end;
 }
 
-
-.telaServico{
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+button.btnDelete {
+    display: block;
+    margin-bottom: 8px;
+    box-shadow: 2px 2px 1px 1px rgba(0, 0, 0, 0.3);
 }
-
-.formServico{
-    margin-top: 20px;
-    background-color: #ececec;
-    box-shadow: 5px 5px 1px 2px rgba(0, 0, 0, 0.3);
-    padding: 40px;
-    width: 70%;
-    display: flex;
-    flex-direction: column;
-}
-
-.formServico > input{
-    border: none;
-    border-radius: 0.5em;
-    margin-bottom: 10px;
-    margin-top: 10px;
-    padding: 5px;
-    outline:none;
-    height: 20%;
-    width: 90%;
-}
-
-#descricao{
-    border: none;
-    border-radius: 0.5em;
-    margin-bottom: 10px;
-    margin-top: 10px;
-    padding: 5px;
-    outline:none;
-    height: 50%;
-    width: 90%;
-}
-
-
-#cadastrarServico{
-    height: 30px;
-    width: 100px;
-    border: none;
-    border-radius: 2px;
-    outline:none;
-    background-color: #3A893A;
-    color: white;
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
-}
-
-#editarServico{
-    display: none;
-    height: 30px;
-    width: 10%;
-    border: none;
-    border-radius: 2px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    outline:none;
-    background-color: #3A893A;
-    color: white;
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
-}
-
-#editarServico:hover{
-    cursor: pointer;
-    background-color: #3A893A;
-}
-
-#cadastrarServico:hover{
-    cursor: pointer;
-    background-color: #3a893ade;
-}
-
-.buttonServico{
-    margin-right: 80px;
-    display: flex;
-    flex-direction: row-reverse;
-}
-

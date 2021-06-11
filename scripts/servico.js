@@ -1,62 +1,74 @@
-let nomeServicoOk  = false
-let nomeServico = window.document.getElementById('nomeServico')
-let numTel = window.document.getElementById('telNumber')
-let numTelOk = false
-let descricao = window.document.getElementById('descricao')
-let descricaoOk = false
+setTimeout(() => {
+    let role = localStorage.getItem('jobzeira_funcao');
+    let id = localStorage.getItem('jobzeira_id');
 
+    if (role == 'cliente' || !role)
+        window.location.href = 'login.php';
+    $('#actions').append('<a class="btnForm btnSecondary" href="meus_itens.php?id='+ id +'">Voltar</a>')
+}, 200);
 
-function validaNomeServico(){
-    let txtNomeServico = document.getElementById('txtNomeServico')
-    if(nomeServico.value.length < 3){
-        txtNomeServico.innerHTML = 'Digite mais que 10 caracteres.'
-        txtNomeServico.style.color = 'red'
-    }
-    else{
-        txtNomeServico.innerHTML ='Nome válido'
-        txtNomeServico.style.color = '#2352A8'
-        nomeServicoOk = true
-    }
+var filledForm = false;
+
+function isFilled() {
+    var mandatories = document.getElementsByClassName('mandatory');
+    let foundEmptyField = false;
+    Array.prototype.forEach.call(mandatories, function(el, index) {
+        let tag = el.tagName;
+        if (tag == 'INPUT' || tag == 'TEXTAREA' || tag == 'SELECT') {
+            if (el.value) {
+                el.classList.add("filled");
+                mandatories[index - 1].classList.add("filled");
+            } else {
+                foundEmptyField = true;
+                el.classList.remove("filled");
+                mandatories[index - 1].classList.remove("filled");
+            }
+        }
+    });
+
+    filledForm = !foundEmptyField;
 }
 
-function validaNumTel(){
-    let txtNumTel= document.getElementById('txtNumTel')
-    if(numTel.value.length < 11){
-        txtNumTel.innerHTML = 'Telefone no mínimo de 11 caracteres'
-        txtNumTel.style.color = 'red'
+function sendToPHP(type, id) {
+    if (!filledForm && type != 'Delete') {
+        alert('Ooops parece que você não preencheu tudo o que precisamos');
+        return;
     }
-    else{
-        txtNumTel.innerHTML ='Telefone válido'
-        txtNumTel.style.color = '#2352A8'
-        numTelOk = true
+
+    if (type == 'Delete') {
+        var awnser = prompt('Você está certo disso? Digite "S" para sim.');
+        if (awnser.toLocaleLowerCase() != 's')
+            return;
     }
+
+    $.ajax({
+        url: 'http://localhost/jobzeira/scripts/submitServico.php',
+        type: 'POST',
+
+        data: function() {
+            var data = new FormData();
+            data.append('titulo', $("#titulo").val());
+            data.append('profissional', localStorage.getItem('jobzeira_id'));
+            data.append('valor', $("#valor").val());
+            data.append('descricao', $("#descricao").val());
+            data.append('file', $("#file").prop('files')[0]);
+            data.append('type', type);
+            data.append('id', id);
+            return data;
+        }(),
+        success: function(data) {
+            var obj = JSON.parse(data);
+            alert(obj.result);
+            window.location.href = 'meus_itens.php?id=' + localStorage.getItem('jobzeira_id');
+        },
+        error: function(data) {
+            alert(data);
+        },
+        complete: function(data) {
+
+        },
+        cache: false,
+        contentType: false,
+        processData: false
+    });
 }
-
-function validaDescricao(){
-    let txtDescricao= document.getElementById('txtDescricao')
-    if(descricao.value != ''){
-        txtDescricao.innerHTML = 'Descricao não pode ser vazia'
-        txtDescricao.style.color = 'red'
-    }
-    else {
-        txtDescricao.innerHTML ='Descrição válida'
-        txtDescricao.style.color = '#2352A8'
-        descricaoOk = true
-    }
-}
-
-function cadastrar(){
-    if( nomeServicoOk == true && numTelOk == true){
-        alert('Serviço cadastrado com sucesso')
-    }
-    else{
-        alert('Não foi possível cadastrar seu serviço')
-    }
-}
-
-//verificar pq descricao nao esta ficando ok
-
-function editar(){
-
-}
-

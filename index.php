@@ -35,11 +35,11 @@
     </div>
     <div class="catalog">
         <?php
-        $sql = "SELECT `anuncio_id`,`titulo`,`valor`,`foto_path`,`descricao` FROM `anuncios` WHERE 1";
+        $sql = "SELECT `servico_id`,`titulo`,`valor`,`foto_path`,`descricao` FROM `servicos` WHERE 1";
         $resultado = mysqli_query($connect, $sql);
         while ($row = mysqli_fetch_array($resultado)) {
             echo '<div class="catalog-item">' .
-                '<a href="ver_anuncio.php?item='.$row[0].'">' .
+                '<a href="ver_servico.php?item='.$row[0].'">' .
                 '<div class="catalog-item-img" style="background-image: url(' . $row[3] . ');"></div>' .
                 '<div class="catalog-item-body">' .
                 '<h3>' . $row[1] . '</h3>' .
@@ -51,13 +51,7 @@
         ?>
     </div>
     <footer>
-        <!--div><img src="imagens/logo.svg" alt="Logo" class="footer-logo"></div-->
         <h4>Desenvolvido por XDevs LTDA.</h4>
-        <!--div class="social-midia">
-            <div class="icons"><i class="fa fa-facebook"></i></div>
-            <div class="icons"><i class="fa fa-instagram"></i></div>
-            <div class="icons"><i class="fa fa-twitter"></i></div>
-        </div-->
     </footer>
 </body>
 

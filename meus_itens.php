@@ -26,11 +26,14 @@
         </nav>
     </header>
     <div class="content">
-        <h1 class="titulo">Meus anúncios</h1>
+        <h1 class="titulo">Meus Serviços</h1>
+        <div class="novoServico">
+            <a href="servico.php?id=1" class="btnForm btnPrimary">Novo</a>
+        </div>
         <div class="table">
             <table>
                 <?php 
-                $sql = "SELECT `anuncio_id`, `titulo`,`valor`, `descricao` FROM `anuncios` WHERE `profissional_id` = " . $_GET['id'];
+                $sql = "SELECT `servico_id`, `titulo`,`valor`, `descricao` FROM `servicos` WHERE `profissional_id` = " . $_GET['id'];
                 $resultado = mysqli_query($connect,$sql);
                 $tableHead = '
                     <tr class="header">
@@ -47,9 +50,9 @@
                     $count++;
                     $tableBoady .= '
                     <tr class="'.$class.'">
-                        <td><a href="'.'anuncio.php?item='.$item[0].'">'.$item[1].'</a></td>
-                        <td><a href="'.'anuncio.php?item='.$item[0].'">'.$item[2].'</a></td>
-                        <td><a href="'.'anuncio.php?item='.$item[0].'">'.$item[3].'</a></td>
+                        <td><a href="'.'servico.php?item='.$item[0].'">'.$item[1].'</a></td>
+                        <td><a href="'.'servico.php?item='.$item[0].'">'.$item[2].'</a></td>
+                        <td><a href="'.'servico.php?item='.$item[0].'">'.$item[3].'</a></td>
                     </tr>';
                 }
                 echo $tableHead;
@@ -62,13 +65,7 @@
         </div>
     </div>
     <footer>
-        <!--div><img src="imagens/logo.svg" alt="Logo" class="footer-logo"></div-->
         <h4>Desenvolvido por XDevs LTDA.</h4>
-        <!--div class="social-midia">
-            <div class="icons"><i class="fa fa-facebook"></i></div>
-            <div class="icons"><i class="fa fa-instagram"></i></div>
-            <div class="icons"><i class="fa fa-twitter"></i></div>
-        </div-->
     </footer>
 </body>
 

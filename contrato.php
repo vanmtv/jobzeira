@@ -40,11 +40,11 @@
             <form>
                 <div class="half">
                     <label for="nome-solicitante">Nome do Contratante
-                        <input type="text" readonly="readonly" id="nome-solicitante" placeholder="Antonio Santos">
+                        <input type="text" readonly="readonly" id="nome-solicitante">
                     </label>
 
                     <label>Nome do Profissional
-                        <input type="text" readonly="readonly" id="nome-profissional" placeholder="João da Silva">
+                        <input type="text" readonly="readonly" id="nome-profissional">
                     </label>
                 </div>
                 <div class="half">
@@ -68,12 +68,12 @@
                 </div>
                 <div class="raised">
                     <label for="titulo-anuncio">Serviço Contratado
-                        <input type="text" readonly="readonly" id="titulo-anuncio">
+                        <input type="text" readonly="readonly" id="titulo-servico">
                     </label>
                 </div>
                 <div class="raised">
                     <label>Descrição do Serviço
-                        <textarea readonly rows="5" id="descricao-anuncio"></textarea>
+                        <textarea readonly rows="5" id="descricao-servico"></textarea>
                     </label>
                 </div>
             </form>

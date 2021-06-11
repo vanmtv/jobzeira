@@ -10,7 +10,7 @@ function getContrato() {
 
         data: function() {
             var data = new FormData();
-            data.append('anuncio', urlParams.get('anuncio'));
+            data.append('servico', urlParams.get('servico'));
             data.append('cliente', localStorage.getItem('jobzeira_id'));
             return data;
         }(),
@@ -37,8 +37,8 @@ function formPopulate(contrato) {
     $('#cpf-solicitante').val(contrato.clienteDoc);
     $('#cpf-profissional').val(contrato.profissionalDoc);
     $('#data-contratacao').val(date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear());
-    $('#titulo-anuncio').val(contrato.itemTitle);
-    $('#descricao-anuncio').val(contrato.itemDesc);
+    $('#titulo-servico').val(contrato.itemTitle);
+    $('#descricao-servico').val(contrato.itemDesc);
     $('#valor').val(contrato.value);
 }
 
@@ -50,7 +50,7 @@ function exportPDF() {
 
         data: function() {
             var data = new FormData();
-            data.append('anuncio', urlParams.get('anuncio'));
+            data.append('servico', urlParams.get('servico'));
             data.append('cliente', localStorage.getItem('jobzeira_id'));
             return data;
         }(),
