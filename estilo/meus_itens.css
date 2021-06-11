@@ -39,8 +39,29 @@ tr {
 
 .zebraOn {
     background-color: #bebebe;
+    transition: 0.6s;
 }
 
 .zebraOff {
     background-color: #ececec;
+    transition: 0.6s;
+}
+
+.zebraOn:hover, .zebraOff:hover {
+    background-color: #333;
+}
+
+tr:hover a {
+    color: white;
+}
+
+div.novoServico {
+    display: flex;
+    justify-content: flex-end;
+}
+
+a.btnPrimary {
+    display: block;
+    margin-bottom: 8px;
+    box-shadow: 2px 2px 1px 1px rgba(0, 0, 0, 0.3);
 }

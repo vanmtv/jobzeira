@@ -4,16 +4,16 @@ include_once '../db_connect.php';
 
 if($_POST['type'] == 'New'){
     $message = 'cadastrado';
-    $sql = "INSERT INTO `anuncios`(`titulo`, `profissional_id`, `valor`, `descricao`, `foto_path`) VALUES ('" . 
+    $sql = "INSERT INTO `servicos`(`titulo`, `profissional_id`, `valor`, `descricao`, `foto_path`) VALUES ('" . 
     $_POST['titulo']. "',". $_POST['profissional'] ."," . $_POST['valor'] . ",'" . $_POST['descricao'] . "','fotopath')";
 }
 else if($_POST['type'] == 'Edit'){
     $message = 'editado';
-    $sql = "UPDATE `anuncios` SET `titulo`= '" . $_POST['titulo'] . "'," . "`valor` =" . $_POST['valor'] . "," . "`descricao` =" . "'" . $_POST['descricao'] . "'" . " WHERE  `anuncio_id` = " . $_POST['id'];
+    $sql = "UPDATE `servicos` SET `titulo`= '" . $_POST['titulo'] . "'," . "`valor` =" . $_POST['valor'] . "," . "`descricao` =" . "'" . $_POST['descricao'] . "'" . " WHERE  `servico_id` = " . $_POST['id'];
 }
 else{
     $message = 'deletado';
-    $sql = "DELETE FROM `anuncios` WHERE  `anuncio_id` = " . $_POST['id'];
+    $sql = "DELETE FROM `servicos` WHERE  `servico_id` = " . $_POST['id'];
 }
 $action = mysqli_query($connect,$sql);
  
@@ -44,7 +44,7 @@ $action = mysqli_query($connect,$sql);
 
 if($action){
     $arrResult = array(     
-        'result' => 'Anúncio ' . $message . ' com sucesso!'
+        'result' => 'Serviço ' . $message . ' com sucesso!'
     );
 }
 else{

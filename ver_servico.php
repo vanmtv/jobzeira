@@ -6,10 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilo/base.css">
-    <link rel="stylesheet" href="estilo/ver_anuncio.css">
+    <link rel="stylesheet" href="estilo/ver_servico.css">
     <link rel="stylesheet" href="estilo/font-awesome/css/font-awesome.min.css">
     <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="scripts/ver_anuncio.js"></script>
+    <script src="scripts/ver_servico.js"></script>
     <script src="scripts/menu.js"></script>
     <title>Jobzeira</title>
 </head>
@@ -17,7 +17,7 @@
 <body>
     <?php
     include_once 'db_connect.php';
-    $sql_item = "SELECT `anuncio_id`,`titulo`,`valor`,`foto_path`,`descricao` FROM `anuncios` WHERE `anuncio_id`=" . "'" . $_GET["item"] . "'";
+    $sql_item = "SELECT `servico_id`,`titulo`,`valor`,`foto_path`,`descricao` FROM `servicos` WHERE `servico_id`=" . "'" . $_GET["item"] . "'";
     $resultado = mysqli_query($connect, $sql_item);
     $item = mysqli_fetch_array($resultado);
     ?>
@@ -46,13 +46,7 @@
         </div>
     </div>
     <footer>
-        <!--div><img src="imagens/logo.svg" alt="Logo" class="footer-logo"></div-->
         <h4>Desenvolvido por XDevs LTDA.</h4>
-        <!--div class="social-midia">
-        <div class="icons"><i class="fa fa-facebook"></i></div>
-        <div class="icons"><i class="fa fa-instagram"></i></div>
-        <div class="icons"><i class="fa fa-twitter"></i></div>
-    </div-->
     </footer>
 </body>
 

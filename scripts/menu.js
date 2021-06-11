@@ -12,13 +12,8 @@ window.onload = function() {
             itens.push({ url: 'logout.php', label: 'Sair' });
             break;
         case 'profissional':
-            itens.push({ url: 'anuncio.php', label: 'Anunciar', param: 'id=' + id });
-            itens.push({ url: 'meus_itens.php', label: 'Meus anúncios', param: 'id=' + id });
-            itens.push({ url: 'logout.php', label: 'Sair' });
-            break;
-        case 'admin':
-            itens.push({ url: 'anuncio.php', label: 'Anunciar', param: 'id=' + id });
-            itens.push({ url: 'meus_itens.php', label: 'Meus anúncios', param: 'id=' + id });
+            itens.push({ url: 'servico.php', label: 'Anunciar', param: 'id=' + id });
+            itens.push({ url: 'meus_itens.php', label: 'Meus Serviços', param: 'id=' + id });
             itens.push({ url: 'logout.php', label: 'Sair' });
             break;
         default:
