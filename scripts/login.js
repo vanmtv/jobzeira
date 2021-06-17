@@ -36,7 +36,7 @@ function logar() {
     }
 
     $.ajax({
-        url: 'http://localhost/jobzeira/scripts/submitLogin.php',
+        url: 'scripts/submitLogin.php',
         type: 'POST',
 
         data: function() {
@@ -51,11 +51,13 @@ function logar() {
                 localStorage.setItem('jobzeira_logado', 'logado');
                 localStorage.setItem('jobzeira_funcao', obj.result.funcao);
                 localStorage.setItem('jobzeira_id', obj.result.usuario_id);
+                localStorage.setItem('jobzeira_nome', obj.result.nome);
                 window.location.href = window.location.origin + '/jobzeira/index.php';
             } else {
                 localStorage.removeItem('jobzeira_logado');
                 localStorage.removeItem('jobzeira_funcao');
                 localStorage.removeItem('jobzeira_id');
+                localStorage.removeItem('jobzeira_nome');
                 alert('Senha ou email incorretos');
             }
         },

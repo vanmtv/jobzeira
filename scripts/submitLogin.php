@@ -2,7 +2,7 @@
 
 include_once '../db_connect.php';
 
-$sql = "SELECT `email`, `senha`, `funcao`,`usuario_id` FROM `usuarios` WHERE `email`= '".$_POST['email']."' AND `senha` = '".$_POST['senha']."'";
+$sql = "SELECT `nome`,`email`, `senha`, `funcao`,`usuario_id` FROM `usuarios` WHERE `email`= '".$_POST['email']."' AND `senha` = '".$_POST['senha']."'";
     
 $resultado = mysqli_query($connect,$sql);
 

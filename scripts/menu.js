@@ -20,7 +20,7 @@ window.onload = function() {
             itens.push({ url: 'login.php', label: 'Entrar' });
             break;
     }
-    itens.push({ url: 'profile.php', label: false });
+    itens.push({ url: 'profile.php', label: false, param: 'id=' + id });
     _insertMenuItens(itens);
 }
 
@@ -38,8 +38,8 @@ function _insertMenuItens(itens) {
                 html += '<li><a href="' + url + '" class="current">' + item.label + '</a></li>';
             else
                 html += '<li><a href="' + url + '">' + item.label + '</a></li>';
-        } else
-            html += '<li><img class="profile" src="imagens/profile.svg" alt="perfil"></li>';
+        } else if(localStorage.getItem('jobzeira_id'))
+            html += '<li><a href="' + url + '"><img class="profile" src="imagens/profile.svg" alt="perfil"> '+ localStorage.getItem('jobzeira_nome')+'</a></li>';
     });
     menu.innerHTML = html;
 }

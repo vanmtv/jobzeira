@@ -21,8 +21,13 @@ function isFilled() {
 }
 
 function sendToPHP(type, id) {
+    if(!filledForm){
+        alert('Oops... Você deixou algum campo em branco');
+        return;
+    }
+
     $.ajax({
-        url: 'http://localhost/jobzeira/scripts/submitUser.php',
+        url: 'scripts/submitUser.php',
         type: 'POST',
 
         data: function() {
