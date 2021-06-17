@@ -42,7 +42,7 @@ function sendToPHP(type, id) {
     }
 
     $.ajax({
-        url: 'http://localhost/jobzeira/scripts/submitServico.php',
+        url: 'scripts/submitServico.php',
         type: 'POST',
 
         data: function() {
