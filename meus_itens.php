@@ -31,7 +31,7 @@
     <div class="content">
         <h1 class="titulo">Meus Serviços</h1>
         <div class="novoServico">
-            <a href="servico.php?id=1" class="btnForm btnPrimary">Novo</a>
+            <a href="servico.php?item=-1&id=<?php echo $_GET['id']?>" class="btnForm btnPrimary">Novo</a>
         </div>
         <div class="table">
             <table>
@@ -53,9 +53,8 @@
                     $count++;
                     $tableBoady .= '
                     <tr class="'.$class.'">
-                        <td><a href="'.'servico.php?item='.$item[0].'">'.$item[1].'</a></td>
-                        <td><a href="'.'servico.php?item='.$item[0].'">'.$item[2].'</a></td>
-                        <td><a href="'.'servico.php?item='.$item[0].'">'.$item[3].'</a></td>
+                        <td><a href="'.'servico.php?item='.$item[0].'&id='.$_GET['id'].'">'.$item[1].'</a></td>
+                        <td><a href="'.'servico.php?item='.$item[0].'&id='.$_GET['id'].'">'.$item[2].'</a></td><td><a href="'.'servico.php?item='.$item[0].'&id='.$_GET['id'].'">'.$item[3].'</a></td>
                     </tr>';
                 }
                 echo $tableHead;

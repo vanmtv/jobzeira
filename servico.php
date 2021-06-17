@@ -27,6 +27,8 @@
 <body>
     <?php
     include_once 'db_connect.php';
+    $showDeleteButton=false;
+    $item = false;
     $item_id = $_GET['item'];
     if (!$item_id) $item_id = -1;
 
