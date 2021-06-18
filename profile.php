@@ -23,14 +23,18 @@
         include_once 'db_connect.php';
         $title = 'Cadastro de usuário';
         $id = $_GET['id'];
-        $user = [''];
+        if(!$id)
+            $id = -1;
+
+        $user = [];
         $doc = [''];
+        $endereco = [];
         $buttonLabel = 'Cadastrar';
         $class = '';
         $name = '';
 
         if($id != -1){
-            $sql = "SELECT `nome`,`funcao`,`doc_id`,`email`,`tel_numero` FROM `usuarios` WHERE `usuario_id` = " . $id;
+            $sql = "SELECT `nome`,`funcao`,`doc_id`,`email`,`tel_numero`,`endereco_id` FROM `usuarios` WHERE `usuario_id` = " . $id;
             $awnser = mysqli_query($connect,$sql);
             $user = mysqli_fetch_array($awnser);
             $title = "Editar perfil";
@@ -41,6 +45,10 @@
             $sql = "SELECT `valor`,`tipo` FROM `documentos` WHERE `doc_id` = " . $user[2];
             $awnser = mysqli_query($connect,$sql);
             $doc = mysqli_fetch_array($awnser);
+
+            $sql = "SELECT `endereco_id`, `logradouro`, `cep`, `municipio`, `complemento`, `bairro`, `numero` FROM `enderecos` WHERE `endereco_id` = " . $user[5];
+            $awnser = mysqli_query($connect,$sql);
+            $endereco = mysqli_fetch_array($awnser);
         }
     ?>
     <header>
@@ -56,16 +64,16 @@
             <form>
                 <div class="raised">
                     <label><span class="mandatory <?php echo $class ?>">*</span>Nome Completo
-                        <input type="text" onchange="isFilled()" id="nome" class="mandatory 
+                        <input type="text" class="mandatory <?php echo $class ?>" onchange="isFilled()" id="nome" class="mandatory 
                         <?php echo $class ?>"  value="<?php echo $user[0] ?>" >
                     </label>
                 </div>
 
                 <div class="half">
-                    <label><span class="mandatory <?php echo $class ?>">*</span>Tipo
+                    <label>Tipo
                         <div class="radio-label">
                             <label for="cliente">
-                                <input class="mandatory <?php echo $class ?>" <?php if($user[1] == 'cliente') echo 'checked' ?> type="radio" onchange="isFilled()" id="cliente" name="type" value="cliente">
+                                <input <?php if($user[1] == 'cliente' || !$user[0]) echo 'checked' ?> type="radio" onchange="isFilled()" id="cliente" name="type" value="cliente">
                                 Cliente
                             </label>
                             <label for="profissional">
@@ -74,14 +82,14 @@
                             </label>
                         </div>
                     </label>
-                    <label><span class="mandatory <?php echo $class ?>">*</span>CPF ou CNPJ
+                    <label>CPF ou CNPJ
                         <div class="radio-label">
                             <label for="cpf">
-                                <input class="mandatory <?php echo $class ?>" type="radio" <?php if($doc[1] == 'cpf') echo 'checked' ?> onchange="isFilled()" id="cpf" name="doc" value="cpf">
+                                <input type="radio" <?php if($doc[1] == 'cpf' || !$doc[0]) echo 'checked'; ?> onchange="isFilled()" id="cpf" name="doc" value="cpf">
                                 CPF
                             </label>
                             <label for="cnpj">
-                                <input class="mandatory <?php echo $class ?>" type="radio" <?php if($doc[1] == 'cnpj') echo 'checked' ?>  onchange="isFilled()" id="cnpj" name="doc" value="cnpj">
+                                <input type="radio" <?php if($doc[1] == 'cnpj') echo 'checked' ?>  onchange="isFilled()" id="cnpj" name="doc" value="cnpj">
                                 CNPJ
                             </label>
                         </div>
@@ -96,10 +104,10 @@
 
                 <div class="half">
                     <label><span class="mandatory <?php echo $class ?>">*</span>Data de nascimento
-                        <input id="date" class="mandatory <?php echo $class ?>" type="date" onchange="isFilled()">
+                        <input id="data_nasc" class="mandatory <?php echo $class ?>" type="date" onchange="isFilled()">
                     </label>
                     <label><span class="mandatory <?php echo $class ?>">*</span>Telefone
-                        <input id="tel" class="mandatory <?php echo $class ?>" value="<?php echo $user[4] ?>" type="tel" onchange="isFilled()">
+                        <input id="tel" placeholder="900000000" class="mandatory <?php echo $class ?>" value="<?php echo $user[4] ?>" type="number" onchange="isFilled()">
                     </label>
                 </div>
 
@@ -109,6 +117,33 @@
                     </label>
                     <label>Senha
                         <input id="senha" type="password" onchange="isFilled()">
+                    </label>
+                </div>
+
+                <div class="half">
+                    <label><span class="mandatory <?php echo $class ?>">*</span>Logradouro
+                        <input id="logradouro" value="<?php echo $endereco[1] ?>" class="mandatory <?php echo $class ?>" type="text" onchange="isFilled()">
+                    </label>
+                    <label><span class="mandatory <?php echo $class ?>">*</span>Número
+                        <input id="numero" value="<?php echo $endereco[6] ?>" class="mandatory <?php echo $class ?>" type="number" onchange="isFilled()">
+                    </label>
+                </div>
+
+                <div class="half">
+                    <label><span class="mandatory <?php echo $class ?>">*</span>Bairro
+                        <input id="bairro" value="<?php echo $endereco[5] ?>" class="mandatory <?php echo $class ?>" type="text" onchange="isFilled()">
+                    </label>
+                    <label>Complemento
+                        <input id="complemento" value="<?php echo $endereco[4] ?>" type="text" onchange="isFilled()">
+                    </label>
+                </div>
+
+                <div class="half">
+                    <label><span class="mandatory <?php echo $class ?>">*</span>CEP
+                        <input id="cep" placeholder="00000000" value="<?php echo $endereco[2] ?>" class="mandatory <?php echo $class ?>" type="number" max="99999999" onchange="isFilled()">
+                    </label>
+                    <label><span class="mandatory <?php echo $class ?>">*</span>Município
+                        <input id="municipio" value="<?php echo $endereco[3] ?>" class="mandatory <?php echo $class ?>" type="text" onchange="isFilled()">
                     </label>
                 </div>
 

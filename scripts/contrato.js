@@ -45,7 +45,7 @@ function formPopulate(contrato) {
 function exportPDF() {
     var urlParams = new URLSearchParams(window.location.search);
     $.ajax({
-        url: 'http://localhost/jobzeira/scripts/getContrato.php',
+        url: 'scripts/getContrato.php',
         type: 'POST',
 
         data: function() {
