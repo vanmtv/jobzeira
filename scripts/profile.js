@@ -26,6 +26,12 @@ function sendToPHP(type, id) {
         return;
     }
 
+    let docType;
+    if($('#cpf').is(':checked'))
+        docType = 'cpf';
+    else
+        docType = 'cnpj';
+
     $.ajax({
         url: 'scripts/submitUser.php',
         type: 'POST',
@@ -34,14 +40,22 @@ function sendToPHP(type, id) {
             var data = new FormData();
             data.append('nome', $("#nome").val());
             if( $("#cliente").is(':checked'))
-            data.append('funcao', $("#cliente").val())
+                data.append('funcao', $("#cliente").val())
             else
-            data.append('funcao', $("#profissional").val());
+                data.append('funcao', $("#profissional").val());
             data.append('document', $("#document").val());
-            data.append('date', $("#date").val());
+            data.append('tel', $("#tel").val());
+            data.append('docType', docType);
+            data.append('data_nasc', $("#data_nasc").val());
             data.append('file', $("#file").prop('files')[0]);
             data.append('email', $("#email").val());
             data.append('senha', $("#senha").val());
+            data.append('logradouro', $("#logradouro").val());
+            data.append('numero', $("#numero").val());
+            data.append('cep', $("#cep").val());
+            data.append('municipio', $("#municipio").val());
+            data.append('complemento', $("#complemento").val());
+            data.append('bairro', $("#bairro").val());
             data.append('type', type);
             data.append('id', id);
             return data;
@@ -49,6 +63,11 @@ function sendToPHP(type, id) {
         success: function(data) {
             var obj = JSON.parse(data);
             alert(obj.result);
+            localStorage.setItem('jobzeira_logado', 'logado');
+            localStorage.setItem('jobzeira_funcao', obj.user.funcao);
+            localStorage.setItem('jobzeira_id', obj.user.usuario_id);
+            localStorage.setItem('jobzeira_nome', obj.user.nome);
+            window.location.href = window.location.origin + '/jobzeira/index.php';
         },
         error: function(data) {
             alert(data);
