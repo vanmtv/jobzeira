@@ -70,6 +70,7 @@ function exportPDF() {
     });
 }
 
+
 function getPDF(pdf) {
     var date = new Date();
     var html = "<h1 style=\"margin-bottom: 32px;font-weight: 700;font-size: 32px;\">Contrato</h1>";
@@ -96,8 +97,20 @@ function getPDF(pdf) {
     html += "<h4 style=\"margin-bottom: 0px;font-weight: 700;font-size: 20px;\">Notas</h4>";
     html += "<p style=\"margin-bottom: 16px;\">Os termos deste contrato estão válidos somente aos envolvidos, a plataforma Jobzeira não se responsabiliza por quaisquer problemas oriundos da prestação do serviço descrito.</p>";
 
-
+    pdf.data = date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear();
     var val = htmlToPdfmake(html);
     var dd = { content: val };
     pdfMake.createPdf(dd).download();
+    sendMail(pdf)
+}
+
+function sendMail(templateParams) {     
+    emailjs.send('service_jtbbgeq', 'template_3wlcitk', templateParams)
+        .then(function(response) {
+            alert('Um email foi enviado com uma cópia deste contrato para você e para o Profissional contratado');
+           console.log('SUCCESS!', response.status, response.text);
+        }, function(error) {
+            alert('Oops.. tivemos um erro ao enviar o seu email de contrato');
+           console.log('FAILED...', error);
+        });
 }
