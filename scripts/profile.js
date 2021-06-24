@@ -67,7 +67,7 @@ function sendToPHP(type, id) {
             localStorage.setItem('jobzeira_funcao', obj.user.funcao);
             localStorage.setItem('jobzeira_id', obj.user.usuario_id);
             localStorage.setItem('jobzeira_nome', obj.user.nome);
-            window.location.href = window.location.origin + '/jobzeira/index.php';
+            window.location.href = 'index.php';
         },
         error: function(data) {
             alert(data);

@@ -52,7 +52,7 @@ function logar() {
                 localStorage.setItem('jobzeira_funcao', obj.result.funcao);
                 localStorage.setItem('jobzeira_id', obj.result.usuario_id);
                 localStorage.setItem('jobzeira_nome', obj.result.nome);
-                window.location.href = window.location.origin + '/jobzeira/index.php';
+                window.location.href = 'index.php';
             } else {
                 localStorage.removeItem('jobzeira_logado');
                 localStorage.removeItem('jobzeira_funcao');
