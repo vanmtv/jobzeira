@@ -10,10 +10,7 @@
     <link rel="stylesheet" href="estilo/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="estilo/contrato.css">
     <script src="scripts/home.js"></script>
-    <script
-  src="https://code.jquery.com/jquery-3.6.0.min.js"
-  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-  crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="scripts/contrato.js"></script>
     <script src="scripts/menu.js"></script>
 
@@ -22,6 +19,12 @@
     <script src='https://cdn.jsdelivr.net/npm/pdfmake@latest/build/vfs_fonts.min.js'></script>
     <!-- html-to-pdfmake file: -->
     <script src="https://cdn.jsdelivr.net/npm/html-to-pdfmake/browser.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("user_HUyESZfl2Az7QiCOtgF8i");
+        })();
+    </script>
     <title>Jobzeira</title>
 </head>
 
