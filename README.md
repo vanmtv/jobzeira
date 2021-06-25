@@ -1,9 +1,15 @@
 # Jobzeira
 
+![Logo](https://github.com/vanmtv/jobzeira/blob/main/imagens/logo.svg)
+
 **Projeto desenvolvido para a disciplina de IHC** 
+
 **Descrição:** Sistema web de localização e contratação de profissionais liberais.
+
 **Professor responsável:** Shigueo Tomomitsu
-**Integrantes:** Mateus Mazzei, Vagner Ramos e Vanessa Regina
+
+**Integrantes:** 
+Mateus Mazzei, Vagner Ramos e Vanessa Regina
 
 ## Hospedagem Jobzeira [(Visite aqui)](https://jobzeira.herokuapp.com/)
 
