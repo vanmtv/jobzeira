@@ -7,6 +7,19 @@
 
 ## Hospedagem Jobzeira[(Visite aqui)](https://jobzeira.herokuapp.com/)
 
+
+## Screenshots
+
+## Home
+![Home](https://i.imgur.com/4v6VdrV.png)
+
+## Ver Serviços - Tela Profissional
+![Profissional](https://i.imgur.com/eU9K03l.png)
+
+## Cadastrar Serviços - Tela Profissional
+![Servico](https://i.imgur.com/5SyQs5h.png)
+
+
 # Briefing
 
  **Qual é o produto serviço a ser desenvolvido**
@@ -179,15 +192,4 @@ seus próprios anúncios. Ações: editar, excluir, ler e criar.</td>
 # Caso de Uso - Cliente
 
 ![Caso de Uso - Cliente](https://i.imgur.com/vyAtKwu.png)
-
-##Screenshots
-
-##Home
-![Home](https://i.imgur.com/4v6VdrV.png)
-
-## Ver Serviços - Tela Profissional
-![Profissional](https://i.imgur.com/eU9K03l.png)
-
-## Cadastrar Serviços - Tela Profissional
-![Servico](https://i.imgur.com/5SyQs5h.png)
 
