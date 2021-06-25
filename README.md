@@ -185,7 +185,7 @@ seus próprios anúncios. Ações: editar, excluir, ler e criar.</td>
 ![Caso de Uso - Cliente](https://i.imgur.com/vyAtKwu.png)
 
 
-## Screenshots
+# Screenshots
 
 ## Home
 ![Home](https://i.imgur.com/4v6VdrV.png)
