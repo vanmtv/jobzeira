@@ -1,5 +1,3 @@
-# Jobzeira
-
 ![Logo](https://github.com/vanmtv/jobzeira/blob/main/imagens/logo.svg)
 
 **Projeto desenvolvido para a disciplina de IHC** 
