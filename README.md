@@ -5,6 +5,7 @@
 **Professor responsável:** Shigueo Tomomitsu
 **Integrantes:** Mateus Mazzei, Vagner Ramos e Vanessa Regina
 
+## Hospedagem Jobzeira[(Visite aqui)](https://jobzeira.herokuapp.com/)
 
 # Briefing
 
@@ -132,3 +133,61 @@ O sistema deverá ser hospedado no servidor privado da XDevs
     <td>Número</td>
   </tr>
 </table>
+
+## Funcionalidades
+<table>
+  <tr>
+    <th>Número</th>
+    <th>Descrição</th>
+  </tr>
+  <tr>
+    <td>RF1</td>
+    <td>Usuários profissionais poderão publicar anúncios</td>
+  </tr>
+  <tr>
+    <td>RF2</td>
+    <td>O sistema deve permitir que os usuários profissionais gerenciem , somente,
+seus próprios anúncios. Ações: editar, excluir, ler e criar.</td>
+  </tr>
+  <tr>
+    <td>RF3</td>
+    <td>O sistema deverá ter um catálogo em que os itens serão anúncios</td>
+  </tr>
+  <tr>
+    <td>RF4</td>
+    <td>Todos os usuários poderão ler os itens do catálogo.</td>
+  </tr>
+  <tr>
+    <td>RF5</td>
+    <td>Usuários clientes podem solicitar o serviço anunciado, gerando um contrato</td>
+  </tr>
+  <tr>
+    <td>RF6</td>
+    <td>Qualquer usuário maior de 18 anos pode se cadastrar no sistema como cliente</td>
+  </tr>
+    <tr>
+    <td>RF7</td>
+    <td>Qualquer usuário maior de 18 anos pode se cadastrar no sistema como cliente</td>
+  </tr>
+</table>
+
+
+# Caso de Uso - Profissional
+
+![Caso de Uso - Profissional](https://i.imgur.com/JkCpMRr.png)
+
+# Caso de Uso - Cliente
+
+![Caso de Uso - Cliente](https://i.imgur.com/vyAtKwu.png)
+
+##Screenshots
+
+##Home
+![Home](https://i.imgur.com/4v6VdrV.png)
+
+## Ver Serviços - Tela Profissional
+![Profissional](https://i.imgur.com/eU9K03l.png)
+
+## Cadastrar Serviços - Tela Profissional
+![Servico](https://i.imgur.com/5SyQs5h.png)
+
