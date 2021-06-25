@@ -5,7 +5,7 @@
 **Professor responsável:** Shigueo Tomomitsu
 **Integrantes:** Mateus Mazzei, Vagner Ramos e Vanessa Regina
 
-## :briefcase: Hospedagem Jobzeira [(Visite aqui)](https://jobzeira.herokuapp.com/)
+## Hospedagem Jobzeira [(Visite aqui)](https://jobzeira.herokuapp.com/)
 
 # Briefing
 
